@@ -3,8 +3,8 @@ Install requirements:
 ```
 pip install -r requirements.txt
 ```
-Download the hebrew wikipedia corpus is available here:
-https://u.cs.biu.ac.il/~yogo/hebwiki/
+Download the hebrew wikipedia corpus whichis available here: https://u.cs.biu.ac.il/~yogo/hebwiki/
+
 Use the “parsed sentences” file. It is compressed. On linux, you can open it with the
 commandline command:
 ```
