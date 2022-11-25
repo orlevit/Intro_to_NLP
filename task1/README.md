@@ -21,9 +21,10 @@ python prog.py -io WIKI_FILE_LOCATION -ic CONVERTED_WIKI_FILE_LOCATION
 ```
 Example:
 WIKI_FILE_LOCATION - /home/or/NLP/wikipedia.deps
+
 CONVERTED_WIKI_FILE_LOCATION - /home/or/NLP/wiki_converted.pkl
 
-For more options, run;
+For more available options:
 ```
 python prog.py -h
 
@@ -63,5 +64,6 @@ Goal:
 Compute similarities using pre-trained word2vec word embeddings and perform various queries on these similarities.
 
 Usage:
-Run each excercise in different jupyter notebook. 
+Run each excercise in different jupyter notebook.
+
 In the begining of each notebook, there are instalation, so they can be ran without the requirement installation.
