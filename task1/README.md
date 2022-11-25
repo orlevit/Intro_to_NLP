@@ -1,4 +1,6 @@
 # Intro_to_NLP
+Python version: 3.7.9
+
 Install requirements:
 ```
 pip install -r requirements.txt
