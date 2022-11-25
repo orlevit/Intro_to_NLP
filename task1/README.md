@@ -20,6 +20,7 @@ Basic usage:
 python prog.py -io WIKI_FILE_LOCATION -ic CONVERTED_WIKI_FILE_LOCATION 
 ```
 Example:
+
 WIKI_FILE_LOCATION - /home/or/NLP/wikipedia.deps
 
 CONVERTED_WIKI_FILE_LOCATION - /home/or/NLP/wiki_converted.pkl
