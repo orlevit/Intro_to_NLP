@@ -23,7 +23,7 @@ CC_MATRIX1 = {'tw_func_ind':True, 'cw_func_ind':False, 'pos_ind':False, 'window'
 CC_MATRIX2 = {'tw_func_ind':False, 'cw_func_ind':False, 'pos_ind':False, 'window':2, 'word_filter':100, 'feature_filter':75}
 CC_MATRIX3 = {'tw_func_ind':True, 'cw_func_ind':True, 'pos_ind':True, 'window':2, 'word_filter':100, 'feature_filter':75}
 
-NON_FUNCTINAL = ['NN','JJ','NCD','NNP','NNT','RB','VB','CD','CDT']
+NON_FUNCTINAL = ['NN','JJ','NCD','NNP','NNT','RB','VB','CD','CDT','JJT','VB-TOINFINITIVE']
 WORDS_TO_EVALUATE = ['מכונית', 'אוטובוס', 'משקה', 'מלון','רובה','פצצה','סוס','שועל','שולח','קערה','גיטרה', 'פסנתר']
 
 def sanity_checks(ccw, wc, fc):
