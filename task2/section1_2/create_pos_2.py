@@ -1,21 +1,20 @@
 import os
+import pickle
 import argparse
 import numpy as np
 from tqdm import tqdm
 from time import time
 from pprint import pprint
 from num2words import num2words
-import gensim.downloader as api
-from create_dictionary2 import make_dictonary, read_file, gec_vecs
+from sklearn.metrics.pairwise import cosine_similarity
+from create_dictionary2 import make_dictonary, read_file, get_vecs, model_vectors
 
-BASE_LOC = r'/home/or/dev/Intro_to_NLP/task2'
+BASE_LOC = r'/RG/rg-tal/orlev/study/bar_ilan/Intro_to_NLP/task2'
 POS_DATA_LOC = os.path.join(BASE_LOC, r'data/pos')
 POS_TRAIN_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-train')
 POS_DEV_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-dev')
 POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-test-input')
 OUTPUT_FILE = os.path.join(POS_DATA_LOC, 'POS_preds_1.txt')
-VEC_MODEL_NAME = 'glove-twitter-25'
-model_vectors = api.load(VEC_MODEL_NAME)
 
 NONE_EXIST = -1
 NONE_POS_IND = 0
@@ -70,28 +69,28 @@ def split_to_lists(line, indication):
         
 def get_location_vec(indication, words_list, loc): 
     if indication == BOTH_POS_IND:
-       vec_list = [gec_vecs(word_list[loc - 1]), gec_vecs(word_list[loc]), gec_vecs(word_list[loc + 1])]
+       vec_list = [get_vecs(words_list[loc - 1]), get_vecs(words_list[loc]), get_vecs(words_list[loc + 1])]
        loc_vec = np.mean(vec_list, axis=0)
 
-    if indication == RIGHT_POS_IND or match_any:
-       vec_list = [gec_vecs(word_list[loc]), gec_vecs(word_list[loc + 1])]
+    if indication == RIGHT_POS_IND:
+       vec_list = [get_vecs(words_list[loc]), get_vecs(words_list[loc + 1])]
        loc_vec = np.mean(vec_list, axis=0)
 
-    if indication == LEFT_POS_IND or match_any:
-       vec_list = [gec_vecs(word_list[loc - 1]), gec_vecs(word_list[loc])]
+    if indication == LEFT_POS_IND:
+       vec_list = [get_vecs(words_list[loc - 1]), get_vecs(words_list[loc])]
        loc_vec = np.mean(vec_list, axis=0)
 
-    if indication == RIGHT_POS_IND or match_any:
-       vec_list = [gec_vecs(word_list[loc]), gec_vecs(word_list[loc + 1])]
+    if indication == RIGHT_POS_IND:
+       vec_list = [get_vecs(words_list[loc]), get_vecs(words_list[loc + 1])]
        loc_vec = np.mean(vec_list, axis=0)
 
-    if indication == NONE_POS_IND or match_any:
-       loc_vec = get_vecs(the_dict['wp_count'])
+    if indication == NONE_POS_IND:
+       loc_vec = get_vecs(words_list[loc])
 
     return loc_vec
 
 
-def match_value(the_dict, indication, right_pos, left_pos, match_any, word_list, loc):
+def match_value(the_dict, indication, right_pos, left_pos, match_any, words_list, loc):
     loc_vec = NONE_EXIST
     gotten_pos_val = NONE_EXIST
 
@@ -100,34 +99,34 @@ def match_value(the_dict, indication, right_pos, left_pos, match_any, word_list,
         left_pos in the_dict['right_pos'][right_pos]['left_pos']:
             gotten_pos_val = the_dict['right_pos'][right_pos]['left_pos'][left_pos]['left_count']
 
-            loc_vec = get_location_vec(BOTH_POS_IND, words_list, loc):
+            loc_vec = get_location_vec(BOTH_POS_IND, words_list, loc)
             return gotten_pos_val, loc_vec
 
     if indication == RIGHT_POS_IND or match_any:
         if right_pos in the_dict['right_pos']:
             gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
     
-            loc_vec = get_location_vec(RIGHT_POS_IND, words_list, loc):
+            loc_vec = get_location_vec(RIGHT_POS_IND, words_list, loc)
             return gotten_pos_val, loc_vec
 
     if indication == LEFT_POS_IND or match_any:
         if left_pos in the_dict['left_pos']:
             gotten_pos_val = the_dict['left_pos'][left_pos]['left_count']
 
-            loc_vec = get_location_vec(LEFT_POS_IND, words_list, loc):
+            loc_vec = get_location_vec(LEFT_POS_IND, words_list, loc)
             return gotten_pos_val, loc_vec
 
     if indication == RIGHT_POS_IND or match_any:
         if right_pos in the_dict['right_pos']:
             gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
 
-            loc_vec = get_location_vec(RIGHT_POS_IND, words_list, loc):
+            loc_vec = get_location_vec(RIGHT_POS_IND, words_list, loc)
             return gotten_pos_val, loc_vec
 
     if indication == NONE_POS_IND or match_any:
         gotten_pos_val = the_dict['wp_count']
 
-        loc_vec = get_location_vec(NONE_POS_IND, words_list, loc):
+        loc_vec = get_location_vec(NONE_POS_IND, words_list, loc)
         return gotten_pos_val, loc_vec
 
     return gotten_pos_val, loc_vec
@@ -146,12 +145,15 @@ def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, 
         right_pos = pos_list[loc + 1]
                     
     if match_missing:
-        for word, word_values in the_dict.items():
+        for _, word_values in the_dict.items():
             for pos, pos_values in word_values.items():
-                val_tested, val_loc = match_value(pos_values, indication, right_pos, left_pos, match_any, word_list, loc)
-
-                if val_tested != NONE_EXIST:
-                   val_tested = cosine_similarity(val_tested, val_loc)
+                val_tested, val_loc = match_value(pos_values, indication, right_pos, left_pos, match_any, words_list, loc)
+                try:
+                    if not isinstance(val_tested, int):
+                       val_tested = cosine_similarity(val_tested.reshape(1,-1), val_loc.reshape(1,-1))[0][0]
+                except:
+                    import pdb; pdb.set_trace();
+                    a=2
 
                 if best_count < val_tested:
                     best_count = val_tested
@@ -160,10 +162,10 @@ def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, 
     else:
         if words_list[loc] in the_dict.keys():
             for pos, pos_values in the_dict[words_list[loc]].items():
-                val_tested, val_loc = match_value(pos_values, indication, right_pos, left_pos, match_any, word_list, loc)
+                val_tested, val_loc = match_value(pos_values, indication, right_pos, left_pos, match_any, words_list, loc)
 
-                if val_tested != NONE_EXIST:
-                   val_tested = cosine_similarity(val_tested, val_loc)
+                if not isinstance(val_tested, int):
+                   val_tested = cosine_similarity(val_tested.reshape(1,-1), val_loc.reshape(1,-1))[0][0]
 
                 if best_count < val_tested:
                     best_count = val_tested
@@ -191,7 +193,7 @@ def get_pos_for_indication(all_possible_locs, indication, the_dict, words_list, 
     return best_count, best_pos, best_loc
 
 
-def get_best_pos(file_lines, annotated_location, words_list, pos_list, the_dict, ma, ms):
+def get_best_pos(annotated_location, words_list, pos_list, the_dict, ma, ms):
     possible_locs = possible_location(annotated_location)
 
     best_count, best_pos, loc = get_pos_for_indication(possible_locs, BOTH_POS_IND, the_dict, words_list, pos_list, ma, ms)
@@ -222,7 +224,7 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
     matching_pos = 0
     total_pos = 0
 
-    for ii, file_line in enumerate(tqdm(file_lines)):
+    for _, file_line in enumerate(tqdm(file_lines)):
         match_any = False
         match_missing = False
         splitted_line = file_line.split() 
@@ -232,8 +234,7 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
         words_list, label_pos = split_to_lists(file_line, dev_ind)
 
         while not all(annotated_location):               
-            best_pos, loc = get_best_pos(file_lines, \
-                                         annotated_location, \
+            best_pos, loc = get_best_pos(annotated_location, \
                                          words_list, \
                                          annotated_token, \
                                          words_pos_dict, \
@@ -268,7 +269,10 @@ def main(args):
     words_pos_dict = make_dictonary(args.input_train)
     toc = time()
     print('Ceate dictionary running time: ', round((toc- tic)/60, 2))
-    
+
+    with open(os.path.join(BASE_LOC, r'dict_temp.pickle'), 'wb') as fp:
+        pickle.dump(words_pos_dict, fp) 
+
     # Report accuracy on dev set
     tic = time()
     file_lines = read_file(args.input_dev)
@@ -288,5 +292,5 @@ def main(args):
     
 
 if __name__ == '__main__':
-    args = parse_arguments()
-    main(args)
+    arguments = parse_arguments()
+    main(arguments)
