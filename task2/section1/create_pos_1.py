@@ -1,8 +1,9 @@
 import os
 import argparse
 import numpy as np
+from tqdm import tqdm
 from time import time
-from collections import defaultdict
+from create_dictionary import *
 
 BASE_LOC = r'/home/or/dev/Intro_to_NLP/task2'
 POS_DATA_LOC = os.path.join(BASE_LOC, r'data/pos')
@@ -16,12 +17,6 @@ NONE_POS_IND = 0
 LEFT_POS_IND = 1
 RIGHT_POS_IND = 2
 BOTH_POS_IND = 3
-
-def read_file(location):
-    file = open(location, "r")
-    file_lines = file.readlines()
-    file.close()
-    return file_lines
 
 
 def write_file(location, data):
@@ -180,7 +175,7 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
     matching_pos = 0
     total_pos = 0
 
-    for ii,file_line in enumerate(file_lines):
+    for ii, file_line in enumerate(tqdm(file_lines)):
         match_any = False
         match_missing = False
         splitted_line = file_line.split() 
@@ -188,7 +183,7 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
         annotated_location = np.zeros(len_line)
         annotated_token = [''] * len_line
         words_list, label_pos = split_to_lists(file_line, dev_ind)
-        print('--->', ii)
+
         while not all(annotated_location):               
             best_pos, loc = get_best_pos(file_lines, \
                                          annotated_location, \
@@ -221,19 +216,31 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
 
 
 def main(args):  
-    import json
-    with open(os.path.join(BASE_LOC, r'dict_temp.json'), "r") as json_file:
-        words_pos_dict = json.load(json_file)    
-
-
+#     import json
+#     with open(os.path.join(BASE_LOC, r'dict_temp.json'), "r") as json_file:
+#         words_pos_dict = json.load(json_file)    
+        
+    # Create the dictionary
+    tic = time()
+    words_pos_dict = make_dictonary(args.input_train)
+    toc = time()
+    print('Ceate dictionary running time: ', round((toc- tic)/60, 2))
+    
     # Report accuracy on dev set
+    tic = time()
     file_lines = read_file(args.input_dev)
     _ = make_pos_all_file(file_lines, words_pos_dict, 1)
+    toc = time()
+    print('Dev file running time: ', round((toc- tic)/60, 2))
     
     # Make redictions on train set
+    tic = time()    
     file_lines = read_file(args.input_test)#POS_DEV_FILE)
     lines_output = make_pos_all_file(file_lines, words_pos_dict, 0)
+    toc = time()
+    print('Test file running time: ', round((toc- tic)/60, 2))
     
+    # Save the results
     write_file(args.output_test, lines_output)
     
 
