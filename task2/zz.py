@@ -99,11 +99,33 @@ def make_dictonary(train_location):
                 
     return words_pos_dict
 
+
 def convert_to_num(word):
     if word.isnumeric():
         return num2words(int(word))
     return word
 
+
+def gec_vecs(token):
+    t2search = convert_to_num(token.lower())
+
+    if t2search in model_vectors.key_to_index.keys():
+        t2v = model_vectors[t2search]
+
+    else:
+        chars_list = []
+        
+        for character in t2search:
+            character2seach = convert_to_num(character)
+            
+            if character2seach in model_vectors.key_to_index.keys():
+                chars_list.append(model_vectors[character2seach])
+
+        t2v = np.mean(chars_list, axis=0)
+        
+    return t2v
+            
+            
 file_lines = read_file(POS_TRAIN_FILE)
 words_pos_dict = defaultdict()
 
@@ -113,17 +135,8 @@ for file_line in tqdm(file_lines):
 
     for ii, _ in enumerate(splitted_line):
         token, pos = split_token_pos(splitted_line, ii)       
-        t2search = convert_to_num(token.lower())
-            
-        if t2search in model_vectors.key_to_index.keys():
-            t2v = model_vectors[t2search]
-
-        else:
-            chars_list = []
-            for character in t2search:
-                chars_list.append(model_vectors[convert_to_num(character)])
-            t2v = np.sum(chars_list,axis=0)
-            
+        t2v = gec_vecs(token)
+        
         add_wp_to_dict(words_pos_dict, token, pos, t2v)
 
         if ii  + 1 < len_line:
@@ -138,4 +151,21 @@ for file_line in tqdm(file_lines):
             add_wp_right_pos_left_pos_to_dict(words_pos_dict, token, pos, right_pos, left_pos, t2v)
             
 import pdb;pdb.set_trace();
+for word, word_values in words_pos_dict.items():
+    for pos, pos_values in word_values.items():
+        words_pos_dict[word][pos]['wp_count'] = np.mean(words_pos_dict[word][pos]['wp_count'], axis=0)
+        
+        if len(pos_values['right_pos']):
+            for right_pos, right_poses_values in pos_values['right_pos'].items():
+                words_pos_dict[word][pos]['right_pos'][right_pos]['right_count'] = np.mean(right_poses_values['right_count'], axis=0)
+            
+                if len(right_poses_values['left_pos']):
+                    for rl_pos, rl_poses_values in right_poses_values['left_pos'].items():
+                        words_pos_dict[word][pos]['right_pos'][right_pos]['left_pos'][rl_pos]['left_count'] = np.mean(rl_poses_values['left_count'], axis=0)
+            
+            
+        if len(pos_values['right_pos']):
+            for left_pos, left_poses_values in pos_values['right_pos'].items():        
+                words_pos_dict[word][pos]['left_pos'][left_pos]['left_count'] = np.mean(left_poses_values['left_count'], axis=0)
+            
 aaa=2
