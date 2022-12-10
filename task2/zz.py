@@ -150,7 +150,6 @@ for file_line in tqdm(file_lines):
         if (ii - 1 <= 0) and (ii  + 1 < len_line):
             add_wp_right_pos_left_pos_to_dict(words_pos_dict, token, pos, right_pos, left_pos, t2v)
             
-import pdb;pdb.set_trace();
 for word, word_values in words_pos_dict.items():
     for pos, pos_values in word_values.items():
         words_pos_dict[word][pos]['wp_count'] = np.mean(words_pos_dict[word][pos]['wp_count'], axis=0)
@@ -165,7 +164,8 @@ for word, word_values in words_pos_dict.items():
             
             
         if len(pos_values['right_pos']):
-            for left_pos, left_poses_values in pos_values['right_pos'].items():        
+            for left_pos, left_poses_values in pos_values['left_pos'].items(): 
                 words_pos_dict[word][pos]['left_pos'][left_pos]['left_count'] = np.mean(left_poses_values['left_count'], axis=0)
-            
+import pdb;pdb.set_trace();
+         
 aaa=2
