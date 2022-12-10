@@ -8,7 +8,8 @@ BASE_LOC = r'/home/or/dev/Intro_to_NLP/task2'
 POS_DATA_LOC = os.path.join(BASE_LOC, r'data/pos')
 POS_TRAIN_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-train')
 POS_DEV_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-dev')
-#POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-test-input')
+POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-test-input')
+OUTPUT_FILE = os.path.join(POS_DATA_LOC, 'POS_preds_1.txt')
 
 NONE_EXIST = -1
 NONE_POS_IND = 0
@@ -16,15 +17,21 @@ LEFT_POS_IND = 1
 RIGHT_POS_IND = 2
 BOTH_POS_IND = 3
 
-
-
-
-def read_file(loc):
-    file = open(POS_TRAIN_FILE, "r")
+def read_file(location):
+    file = open(location, "r")
     file_lines = file.readlines()
     file.close()
     return file_lines
 
+
+def write_file(location, data):
+    file = open(location, "w")
+    for line in data:
+        file.write(line)
+        file.write('\n')
+    file.close()
+
+    
 def possible_location(annotated_location):
     len_line = len(annotated_location)
     dist_tokens = np.ones(len_line) * -1
@@ -41,127 +48,198 @@ def possible_location(annotated_location):
                     loc_value += 1
 
             dist_tokens[loc] = loc_value
-    print(dist_tokens)
+#     print(dist_tokens)
     return dist_tokens
 
-def split_to_lists(line):
+
+def split_to_lists(line, indication):
     words_list =[]
     pos_list = []
     
-    for token_and_pos in line.split():
-        token, pos = token_and_pos.rsplit('/',1)
-        words_list.append(token)
-        pos_list.append(pos)
+    if indication:
+        for token_and_pos in line.split():
+            token, pos = token_and_pos.rsplit('/',1)
+            words_list.append(token)
+            pos_list.append(pos)        
+
+    else:
+        for token in line.split():
+            words_list.append(token)
         
     return words_list, pos_list
-
+        
+    
 def match_value(the_dict, indication, right_pos, left_pos, match_any):
-    try:
-        gotten_pos_val = NONE_EXIST
-        if indication == BOTH_POS_IND:
-            if right_pos in the_dict['right_pos'] and \
-            left_pos in the_dict['right_pos'][right_pos]['left_pos']:
-                gotten_pos_val = the_dict['right_pos'][right_pos]['left_pos'][left_pos]['left_count']
-                return gotten_pos_val
-            
-        if indication == RIGHT_POS_IND or match_any:
-            if right_pos in the_dict['right_pos']:
-                gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
-                return gotten_pos_val
-            
-        if indication == LEFT_POS_IND or match_any:
-            if left_pos in the_dict['left_pos']:
-                gotten_pos_val = the_dict['left_pos'][left_pos]['left_count']
-                return gotten_pos_val
-            
-        if indication == NONE_POS_IND or match_any:
-            gotten_pos_val = the_dict['wp_count']
+    gotten_pos_val = NONE_EXIST
+    if indication == BOTH_POS_IND:
+        if right_pos in the_dict['right_pos'] and \
+        left_pos in the_dict['right_pos'][right_pos]['left_pos']:
+            gotten_pos_val = the_dict['right_pos'][right_pos]['left_pos'][left_pos]['left_count']
             return gotten_pos_val
-    except:
-        import pdb; pdb.set_trace();
+
+    if indication == RIGHT_POS_IND or match_any:
+        if right_pos in the_dict['right_pos']:
+            gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
+            return gotten_pos_val
+
+    if indication == LEFT_POS_IND or match_any:
+        if left_pos in the_dict['left_pos']:
+            gotten_pos_val = the_dict['left_pos'][left_pos]['left_count']
+            return gotten_pos_val
+
+    if indication == RIGHT_POS_IND or match_any:
+        if right_pos in the_dict['right_pos']:
+            gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
+            return gotten_pos_val
+
+    if indication == NONE_POS_IND or match_any:
+        gotten_pos_val = the_dict['wp_count']
+        return gotten_pos_val
+
     return gotten_pos_val
 
-def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any):
+
+def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, match_missing):
     best_pos = ''
     best_count = NONE_EXIST
-    
-    if words_list[loc] in the_dict.keys():
+    left_pos = None
+    right_pos = None  
 
-        left_pos = None
-        right_pos = None  
-        
-        if loc > 0:
-            left_pos = pos_list[loc - 1]
+    if loc > 0:
+        left_pos = pos_list[loc - 1]
 
-        if loc + 1 < len(pos_list):
-                right_pos = pos_list[loc + 1]
-        
-    try:
+    if loc + 1 < len(pos_list):
+        right_pos = pos_list[loc + 1]
+                    
+    if match_missing:
+        for word, word_values in the_dict.items():
+            for pos, pos_values in word_values.items():
+                val = match_value(pos_values, indication, right_pos, left_pos, match_any)
+                if best_count < val:
+                    best_count = val
+                    best_pos = pos
+
+    else:
+        if words_list[loc] in the_dict.keys():
             for pos, pos_values in the_dict[words_list[loc]].items():
                 val = match_value(pos_values, indication, right_pos, left_pos, match_any)
                 if best_count < val:
                     best_count = val
                     best_pos = pos
-    except:
-        import pdb; pdb.set_trace();
+
+    #         import pdb; pdb.set_trace();
+    
     return best_count, best_pos
 
-def get_pos_for_indication(all_possible_locs, indication, the_dict, words_list, pos_list, match_any):
+
+def get_pos_for_indication(all_possible_locs, indication, the_dict, words_list, pos_list, match_any, match_missing):
     specific_possible_locs = np.where(all_possible_locs == indication)[0]
-#     try:
     best_pos = ''
     best_count = NONE_EXIST
     best_loc = NONE_EXIST
 
     for loc in specific_possible_locs:
-        tested_val, tested_pos = best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any)
+        tested_val, tested_pos = best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, match_missing)
         if tested_pos != NONE_EXIST:
             if  best_count < tested_val:
                 best_count = tested_val
                 best_pos = tested_pos
                 best_loc = loc
-#     except:
-#         import pdb; pdb.set_trace();                
+                
     return best_count, best_pos, best_loc
 
-def get_best_pos(file_lines, annotated_location, words_list, pos_list, the_dict, match_any):
+
+def get_best_pos(file_lines, annotated_location, words_list, pos_list, the_dict, ma, ms):
     possible_locs = possible_location(annotated_location)
 
-    best_count, best_pos, loc = get_pos_for_indication(possible_locs, BOTH_POS_IND, the_dict, words_list, pos_list, match_any)
+    best_count, best_pos, loc = get_pos_for_indication(possible_locs, BOTH_POS_IND, the_dict, words_list, pos_list, ma, ms)
     if best_count != NONE_EXIST:
         return best_pos, loc
-    best_count, best_pos, loc = get_pos_for_indication(possible_locs, RIGHT_POS_IND, the_dict, words_list, pos_list, match_any)
+    best_count, best_pos, loc = get_pos_for_indication(possible_locs, RIGHT_POS_IND, the_dict, words_list, pos_list, ma, ms)
     if best_count != NONE_EXIST:
         return best_pos, loc
-    best_count, best_pos, loc = get_pos_for_indication(possible_locs, LEFT_POS_IND, the_dict, words_list, pos_list, match_any)
+    best_count, best_pos, loc = get_pos_for_indication(possible_locs, LEFT_POS_IND, the_dict, words_list, pos_list, ma, ms)
     if best_count != NONE_EXIST:
         return best_pos, loc
-    best_count, best_pos, loc = get_pos_for_indication(possible_locs, NONE_POS_IND, the_dict, words_list, pos_list, match_any)
+    best_count, best_pos, loc = get_pos_for_indication(possible_locs, NONE_POS_IND, the_dict, words_list, pos_list, ma, ms)
     return best_pos, loc
 
+    
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-itr', '--input-train', type=str, default=POS_TRAIN_FILE, help='Input train file location')
+    parser.add_argument('-id', '--input-dev', type=str, default=POS_DEV_FILE, help='Input dev set to calc accuracy')
+    parser.add_argument('-it', '--input-test', type=str, default=POS_TEST_FILE, help='Input test set location')
+    parser.add_argument('-ot', '--output-test', type=str, default=OUTPUT_FILE, help='Output Test set location')
 
-import json
-with open(os.path.join(BASE_LOC, r'dict_temp.json'), "r") as json_file:
-    words_pos_dict = json.load(json_file)    
-file_lines = read_file(POS_DEV_FILE)
-
-
-splitted_line = file_lines[0].split()
-len_line = len(splitted_line)
-annotated_location = np.zeros(len_line)
-annotated_token = [''] * len_line
-match_any = False
-
-words_list, label_pos = split_to_lists(file_lines[0])
-while not all(annotated_location):
-    #import pdb; pdb.set_trace();
-    print('--------------------')
-    best_pos, loc = get_best_pos(file_lines, annotated_location, words_list, annotated_token, words_pos_dict, match_any)
-    print('--------------------')
+    return parser.parse_args()
 
 
-    if loc == NONE_EXIST:
-        match_any = True
-    else:
-        annotated_location[loc] = 1
-        annotated_token[loc] = best_pos
+def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
+    lines_output = []
+    matching_pos = 0
+    total_pos = 0
+
+    for ii,file_line in enumerate(file_lines):
+        match_any = False
+        match_missing = False
+        splitted_line = file_line.split() 
+        len_line = len(splitted_line)
+        annotated_location = np.zeros(len_line)
+        annotated_token = [''] * len_line
+        words_list, label_pos = split_to_lists(file_line, dev_ind)
+        print('--->', ii)
+        while not all(annotated_location):               
+            best_pos, loc = get_best_pos(file_lines, \
+                                         annotated_location, \
+                                         words_list, \
+                                         annotated_token, \
+                                         words_pos_dict, \
+                                         match_any, \
+                                         match_missing)
+
+            if match_any and (loc == NONE_EXIST):
+                match_missing = True
+                match_any = False
+
+            elif loc == NONE_EXIST:
+                match_any = True
+            else:
+                annotated_location[loc] = 1
+                annotated_token[loc] = best_pos
+
+        lines_output.append(' '.join([f'{i}/{j}' for i,j in zip(words_list,annotated_token)]))
+        if dev_ind:
+            matching_pos += sum(np.asarray(annotated_token)==np.asarray(label_pos))
+            total_pos += len_line
+
+    if dev_ind:
+        acc = round(matching_pos/total_pos,3) * 100
+        print(f'The accuracy over the data set is {acc}%')
+        
+    return lines_output
+
+
+def main(args):  
+    import json
+    with open(os.path.join(BASE_LOC, r'dict_temp.json'), "r") as json_file:
+        words_pos_dict = json.load(json_file)    
+
+
+    # Report accuracy on dev set
+    file_lines = read_file(args.input_dev)
+    _ = make_pos_all_file(file_lines, words_pos_dict, 1)
+    
+    # Make redictions on train set
+    file_lines = read_file(args.input_test)#POS_DEV_FILE)
+    lines_output = make_pos_all_file(file_lines, words_pos_dict, 0)
+    
+    write_file(args.output_test, lines_output)
+    
+
+if __name__ == '__main__':
+    args = parse_arguments()
+    main(args)
+
+        
+        
