@@ -11,6 +11,7 @@ Download and unzip the files:
 
 
 **Part 1:**
+
 Given a text, assign each word in the text its correct part-of-speech based on the out-of-the-box vectors, without
 training any classifiers.
 
