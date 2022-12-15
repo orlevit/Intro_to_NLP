@@ -4,17 +4,16 @@ import settings
 import numpy as np
 from tqdm import tqdm
 from time import time
-import gensim.downloader as api
-from num2words import num2words
-from sklearn.metrics.pairwise import cosine_similarity
+from transformers import pipeline
 from create_dictionary import make_dictionary, read_file
 
 BASE_LOC = r'/RG/rg-tal/orlev/study/bar_ilan/Intro_to_NLP/task2'
-POS_DATA_LOC = os.path.join(BASE_LOC, r'data/pos')
-POS_TRAIN_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-train')
-POS_DEV_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-dev')
-POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-test-input')
-OUTPUT_FILE = os.path.join(BASE_LOC, 'section1_2' ,'POS_preds_2.txt')
+POS_DATA_LOC = os.path.join(BASE_LOC, r'data/ner')
+POS_TRAIN_FILE = os.path.join(POS_DATA_LOC, 'train')
+POS_DEV_FILE = os.path.join(POS_DATA_LOC, 'dev')
+POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'test.blind')
+OUTPUT_DEV_FILE = os.path.join(BASE_LOC, 'section2' ,'NER_dev_preds.txt')
+OUTPUT_TEST_FILE = os.path.join(BASE_LOC, 'section2' ,'NER_preds.txt')
 
 THRESHOLD = 0
 NONE_EXIST = -1
@@ -22,11 +21,9 @@ NONE_POS_IND = 0
 LEFT_POS_IND = 1
 RIGHT_POS_IND = 2
 BOTH_POS_IND = 3
+K_TOP = 3
 
-
-VEC_MODEL_NAME = 'glove-wiki-gigaword-50'
-print(f'Model embddings: {VEC_MODEL_NAME}')
-model_vectors = api.load(VEC_MODEL_NAME)
+unmasker = pipeline('fill-mask', model='roberta-base', top_k=K_TOP)
 
 def write_file(location, data):
     file = open(location, "w")
@@ -36,39 +33,18 @@ def write_file(location, data):
     file.close()
 
     
-def get_closet(token, the_dict):
-    best_word = NONE_EXIST
-    best_count = NONE_EXIST
-    t2search = model_vectors[token]
+def get_closet(words_list, loc, the_dict):
+    masked_sentence = ' '.join([ word if ii != loc else '<mask>' for ii, word in enumerate(words_list) ])
+    fill_options = unmasker(masked_sentence)
+    
+    for fill_option in fill_options: 
+        examined_fill = fill_option['token_str'].strip()
+        if examined_fill in the_dict.keys():
+           if THRESHOLD < fill_option['score']:
+              return examined_fill
 
-    for word in the_dict: 
-        check_word = convert_word(word.lower())
+    return NONE_EXIST
 
-        if check_word in model_vectors.key_to_index.keys():
-           t2v = model_vectors[check_word]
-           val = cosine_similarity(t2v.reshape(1,-1), t2search.reshape(1,-1))[0][0]
-
-           if best_count < val and THRESHOLD < val:
-              best_count = val
-              best_word = word
-
-    return best_word
-
-def convert_word(word):
-    if word.isnumeric():
-        return num2words(int(word))
-    return word
-
-def get_vecs(token):
-    t2search = convert_word(token.lower())
-
-    if t2search in model_vectors.key_to_index.keys():
-        t2v = model_vectors[t2search]
-
-    else:
-        t2v = ''
-        
-    return t2v
 def possible_location(annotated_location):
     len_line = len(annotated_location)
     dist_tokens = np.ones(len_line) * -1
@@ -130,6 +106,12 @@ def match_value(the_dict, indication, right_pos, left_pos, match_any):
     return gotten_pos_val
 
 
+def count_oov(the_dict, words_list):
+    for word in words_list:
+        if word not in the_dict.keys():
+           settings.oov += 1
+
+
 def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, match_missing):
     best_pos = ''
     best_count = NONE_EXIST
@@ -143,19 +125,16 @@ def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, 
         right_pos = pos_list[loc + 1]
                     
     if match_missing:
-        check_word = convert_word(words_list[loc].lower())
-        if check_word in model_vectors.key_to_index.keys():
-           closest_word = get_closet(check_word, the_dict)
-           if closest_word is not NONE_EXIST:
-              for pos, pos_values in the_dict[closest_word].items():
-                  val = match_value(pos_values, indication, right_pos, left_pos, match_any)
-                  if best_count < val:
-                      best_count = val
-                      best_pos = pos
-           else:
-              best_count, best_pos =  search_in_dict(the_dict, indication, right_pos, left_pos, match_any, best_count, best_pos)
+        closest_word = get_closet(words_list, loc, the_dict)
+        if closest_word is not NONE_EXIST:
+           for pos, pos_values in the_dict[closest_word].items():
+               val = match_value(pos_values, indication, right_pos, left_pos, match_any)
+               if best_count < val:
+                   best_count = val
+                   best_pos = pos
         else:
            best_count, best_pos =  search_in_dict(the_dict, indication, right_pos, left_pos, match_any, best_count, best_pos)
+
     else:
         if words_list[loc] in the_dict.keys():
             for pos, pos_values in the_dict[words_list[loc]].items():
@@ -209,19 +188,14 @@ def get_best_pos(file_lines, annotated_location, words_list, pos_list, the_dict,
     best_count, best_pos, loc = get_pos_for_indication(possible_locs, NONE_POS_IND, the_dict, words_list, pos_list, ma, ms)
     return best_pos, loc
 
- 
-def count_oov(the_dict, words_list):
-    for word in words_list:
-        if word not in the_dict.keys():
-           settings.oov += 1
-
-
+    
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-itr', '--input-train', type=str, default=POS_TRAIN_FILE, help='Input train file location')
     parser.add_argument('-id', '--input-dev', type=str, default=POS_DEV_FILE, help='Input dev set to calc accuracy')
     parser.add_argument('-it', '--input-test', type=str, default=POS_TEST_FILE, help='Input test set location')
-    parser.add_argument('-ot', '--output-test', type=str, default=OUTPUT_FILE, help='Output Test set location')
+    parser.add_argument('-od', '--output-dev', type=str, default=OUTPUT_DEV_FILE, help='Output Test set location')
+    parser.add_argument('-ot', '--output-test', type=str, default=OUTPUT_TEST_FILE, help='Output Test set location')
 
     return parser.parse_args()
 
@@ -284,10 +258,11 @@ def main(args):
     settings.init()
     tic = time()
     file_lines = read_file(args.input_dev)
-    _ = make_pos_all_file(file_lines, words_pos_dict, 1)
+    lines_output = make_pos_all_file(file_lines, words_pos_dict, 1)
     toc = time()
     print('Dev file running time: ', round((toc- tic)/60, 2))
     print(f'OOV words: {np.round(settings.oov/settings.total_words, 2)*100}%')
+    write_file(args.output_dev, lines_output)
     
     # Make redictions on train set
     settings.start()

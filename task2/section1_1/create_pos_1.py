@@ -1,16 +1,17 @@
 import os
 import argparse
+import settings
 import numpy as np
 from tqdm import tqdm
 from time import time
 from create_dictionary import *
 
-BASE_LOC = r'/home/or/dev/Intro_to_NLP/task2'
+BASE_LOC = r'/RG/rg-tal/orlev/study/bar_ilan/Intro_to_NLP/task2'
 POS_DATA_LOC = os.path.join(BASE_LOC, r'data/pos')
 POS_TRAIN_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-train')
 POS_DEV_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-dev')
 POS_TEST_FILE = os.path.join(POS_DATA_LOC, 'ass1-tagger-test-input')
-OUTPUT_FILE = os.path.join(POS_DATA_LOC, 'POS_preds_1.txt')
+OUTPUT_FILE = os.path.join(BASE_LOC, 'section1_1','POS_preds_1.txt')
 
 NONE_EXIST = -1
 NONE_POS_IND = 0
@@ -43,7 +44,7 @@ def possible_location(annotated_location):
                     loc_value += 1
 
             dist_tokens[loc] = loc_value
-#     print(dist_tokens)
+    #print(dist_tokens)
     return dist_tokens
 
 
@@ -63,18 +64,13 @@ def split_to_lists(line, indication):
         
     return words_list, pos_list
         
-    
+
 def match_value(the_dict, indication, right_pos, left_pos, match_any):
     gotten_pos_val = NONE_EXIST
     if indication == BOTH_POS_IND:
         if right_pos in the_dict['right_pos'] and \
         left_pos in the_dict['right_pos'][right_pos]['left_pos']:
             gotten_pos_val = the_dict['right_pos'][right_pos]['left_pos'][left_pos]['left_count']
-            return gotten_pos_val
-
-    if indication == RIGHT_POS_IND or match_any:
-        if right_pos in the_dict['right_pos']:
-            gotten_pos_val = the_dict['right_pos'][right_pos]['right_count']
             return gotten_pos_val
 
     if indication == LEFT_POS_IND or match_any:
@@ -122,7 +118,6 @@ def best_pos_in_loc(loc, the_dict, words_list, pos_list, indication, match_any, 
                     best_count = val
                     best_pos = pos
 
-    #         import pdb; pdb.set_trace();
     
     return best_count, best_pos
 
@@ -142,6 +137,12 @@ def get_pos_for_indication(all_possible_locs, indication, the_dict, words_list, 
                 best_loc = loc
                 
     return best_count, best_pos, best_loc
+
+
+def count_oov(the_dict, words_list):
+    for word in words_list:
+        if word not in the_dict.keys():
+           settings.oov += 1
 
 
 def get_best_pos(file_lines, annotated_location, words_list, pos_list, the_dict, ma, ms):
@@ -183,6 +184,8 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
         annotated_location = np.zeros(len_line)
         annotated_token = [''] * len_line
         words_list, label_pos = split_to_lists(file_line, dev_ind)
+        settings.total_words += len_line
+        count_oov(words_pos_dict, words_list)
 
         while not all(annotated_location):               
             best_pos, loc = get_best_pos(file_lines, \
@@ -216,10 +219,6 @@ def make_pos_all_file(file_lines, words_pos_dict, dev_ind):
 
 
 def main(args):  
-#     import json
-#     with open(os.path.join(BASE_LOC, r'dict_temp.json'), "r") as json_file:
-#         words_pos_dict = json.load(json_file)    
-        
     # Create the dictionary
     tic = time()
     words_pos_dict = make_dictonary(args.input_train)
@@ -227,18 +226,22 @@ def main(args):
     print('Ceate dictionary running time: ', round((toc- tic)/60, 2))
     
     # Report accuracy on dev set
+    settings.init()
     tic = time()
     file_lines = read_file(args.input_dev)
     _ = make_pos_all_file(file_lines, words_pos_dict, 1)
     toc = time()
     print('Dev file running time: ', round((toc- tic)/60, 2))
+    print(f'OOV words: {np.round(settings.oov/settings.total_words, 2)*100}%')
     
     # Make redictions on train set
+    settings.start()
     tic = time()    
     file_lines = read_file(args.input_test)#POS_DEV_FILE)
     lines_output = make_pos_all_file(file_lines, words_pos_dict, 0)
     toc = time()
     print('Test file running time: ', round((toc- tic)/60, 2))
+    print(f'OOV words: {np.round(settings.oov/settings.total_words, 2)*100}%')
     
     # Save the results
     write_file(args.output_test, lines_output)
@@ -247,6 +250,3 @@ def main(args):
 if __name__ == '__main__':
     args = parse_arguments()
     main(args)
-
-        
-        
