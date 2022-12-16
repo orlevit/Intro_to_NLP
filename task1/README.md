@@ -6,6 +6,7 @@ Install requirements:
 pip install -r requirements.txt
 ```
 Download the hebrew wikipedia corpus whichis available here: https://u.cs.biu.ac.il/~yogo/hebwiki/
+Or use a small sample from it in *data/wiki_small.txt*
 
 Use the “parsed sentences” file. It is compressed. On linux, you can open it with the
 commandline command:
