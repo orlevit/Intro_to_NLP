@@ -1,0 +1,156 @@
+
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But the  *program* should still work with grammars that don't
+#      follow this convention.  So how can the program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+1	ROOT	S .
+1	ROOT	S !
+1	ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+
+1	S	NP VP
+1	VP	Verb NP
+##################################################  part 4 - (a) “a” vs. “an”. ###################################################
+# S
+9	NP	Det Noun
+9	NP	DetA NounA
+9	NP	DetAn NounAn
+1	NNP	NNP	CC	Det	Noun
+1	NNP	NNP	CC	DetA	NounA
+1	NNP	NNP	CC	DetAn	NounAn
+##################################################################################################################################
+1	NP	NP PP
+1	PP	Prep NP
+1	Noun	Adj Noun
+1	NounA	AdjA Noun
+1	NounAn	AdjAn Noun
+
+# Vocabulary.  Your program can see that "ate" is a terminal
+# symbol because there exists no rule for rewriting it.
+# Any symbol that can rewrite as a terminal (or a string of 
+# terminals, like "chief of staff") is called a "preterminal."  Notice 
+# that a preterminal is a special kind of nonterminal.
+
+1	Verb	ate
+1	Verb	wanted
+1	Verb	kissed
+1	Verb	understood
+1	Verb	pickled
+
+1	Det	the
+1	DetA	a
+1	DetAn	an
+1	Det	every
+
+1	NounA	president
+1	NounA	sandwich
+1	NounA	pickle
+1	NounA	chief of staff
+1	NounA	floor
+1	NounA   proposal
+1	NounA   desk
+
+1	NounAn	apple
+1	NounAn	orange
+1	NounAn	umbrella
+1	NounAn	oven
+1	NounAn	eel
+
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	chief of staff
+1	Noun	floor
+1	Noun	apple
+1	Noun	orange
+1	Noun	umbrella
+1	Noun	oven
+1	Noun	eel
+1	Noun    proposal
+1	Noun    desk
+
+1	AdjA	fine
+1	AdjA	delicious
+1	AdjA	perplexed
+1	AdjA	pickled
+
+1	AdjAn	active
+1	AdjAn	actual
+1	AdjAn	easy
+1	AdjAn	oval
+
+1	Adj	fine
+1	Adj	delicious
+1	Adj	perplexed
+1	Adj	pickled
+1	Adj	active
+1	Adj	actual
+1	Adj	easy
+1	Adj	oval
+
+1	Prep	with
+1	Prep	on
+1	Prep	under
+1	Prep	in
+
+
+1	S	NNP	VP
+1	NNP	Sally
+
+
+1	VP	Verb	CC	VP
+1	CC	and
+
+1	VP	AFVerb
+1	AFVerb	sighed #AFVerb = A Final Verb
+
+
+1	VP	AFVerb Prep S
+1	AFVerb	thought
+1	Prep	that
+
+
+1	S	Prep VP PP VP
+1	Prep	it
+1	VP	Verb NNP
+1	Verb	perplexed
+
+1	Adj	very
+
+
+1	VP	Verb PP
+0.1	PP PP PP
+1	Verb    worked
+
+
+1	VP	Verb Adj
+1	Verb	is #Copular Verb
+1	Adj	lazy
+
+1	VP	Verb VBG NP
+1	VBG eating

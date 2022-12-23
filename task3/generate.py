@@ -3,11 +3,13 @@ import time
 import random
 import argparse
 from collections import defaultdict
+sys.setrecursionlimit(100000)
 
 class PCFG(object):
     def __init__(self):
         self._rules = defaultdict(list)
         self._sums = defaultdict(float)
+        self._tree_structure = False
 
     def add_rule(self, lhs, rhs, weight):
         assert(isinstance(lhs, str))
@@ -30,11 +32,19 @@ class PCFG(object):
 
     def is_terminal(self, symbol): return symbol not in self._rules
 
+    def setTreesTructure(self, is_tree_structure):
+        self._tree_structure = is_tree_structure
+
     def gen(self, symbol):
         if self.is_terminal(symbol): return symbol
         else:
             expansion = self.random_expansion(symbol)
-            return " ".join(self.gen(s) for s in expansion)
+            return_output = " ".join(self.gen(s) for s in expansion)
+
+            if self._tree_structure:
+               return_output = "(" + symbol + " " + return_output + ")"
+
+        return return_output
 
     def random_sent(self):
         return self.gen("ROOT")
@@ -52,13 +62,15 @@ class PCFG(object):
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--number', type=str, default=1, help='Number of sentences')
+    parser.add_argument('-t', action='store_true')
     args, unknown = parser.parse_known_args()
  
-    return (args,unknown)
+    return (args, unknown)
 
 if __name__ == '__main__':
     args, f_name = parse_arguments()
     pcfg = PCFG.from_file(f_name[0])
+    pcfg.setTreesTructure(args.t)
 
     for i in range(int(args.number)):
-        print(f'{i + 1}) {pcfg.random_sent()}')
+        print(f'{i + 1}. {pcfg.random_sent()}')

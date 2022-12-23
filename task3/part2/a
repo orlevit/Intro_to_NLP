@@ -140,7 +140,7 @@
 # 18)Noun	desk
 
 1	VP	Verb PP
-1	PP PP PP
+0.1	PP PP PP
 1	Noun    proposal
 1	Noun    desk
 1	Verb    worked
