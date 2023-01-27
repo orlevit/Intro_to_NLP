@@ -1,0 +1,5 @@
+sentence_id,John,educated,Yale,John_first_index,John_last_index,educated_first_index,educated_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+138036697,Nakiyemba,educated,Ndejje University,0,0,1,1,5,6,"Nakiyemba educated business administration at Ndejje University , and works at the Kampala club .",1
+162554861,Ivanov,educated,the Moscow State Forest University,0,0,1,1,4,8,"Ivanov educated economy at the Moscow State Forest University , and in 2015 , he competed at the Summer Universiade in Gwangju , South Korea .",1
+170702664,Kang,educated,the Incheon National University,4,4,5,5,7,10,"Born in Jeju , Kang educated at the Incheon National University , won the 2008 National University Championships in the women 's singles and doubles event .",1
+171278984,Kim,educated,the Korea National Sport University,0,0,2,2,4,8,Kim later educated at the Korea National Sport University .,1

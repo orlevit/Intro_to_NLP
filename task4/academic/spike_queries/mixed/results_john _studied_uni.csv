@@ -1,0 +1,91 @@
+sentence_id,John,studied,Yale,John_first_index,John_last_index,studied_first_index,studied_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+1309256,Ho,studied,Lingnan University,0,0,1,1,4,5,Ho studied Philosophy in Lingnan University .,1
+2827811,Mann,studied,Vanderbilt University,0,0,1,1,5,6,Mann studied political science in Vanderbilt University .,1
+3758309,Chen Ran,studied,Beijing Normal University,0,1,2,2,8,10,Chen Ran studied Chinese language and literature in Beijing Normal University from 1982 to 1986 and graduated when she was 23 .,1
+4952407,Yang,studied,Hosei University,3,3,4,4,7,8,"In 1904 , Yang studied politics in Hosei University .",1
+7070249,Francisca Sutil,studied,the Southern Methodist University,3,4,5,5,12,15,"In 1972 , Francisca Sutil studied at the School of Art in the Southern Methodist University in Dallas , Texas .",1
+9567248,Del Alcázar,studied,the Complutense University of Madrid,0,1,2,2,11,15,"Del Alcázar studied law , political sciences and business administration in the Complutense University of Madrid and the Sorbonne , Paris .",1
+10057389,Frost,studying,Hudson University,1,1,3,3,9,10,"While Frost was studying to be a scientist in Hudson University , she fell in love with her teacher Martin Stein .",1
+10234412,Geronimo,studied,University of the Philippines Open University ( UP Open University,0,0,1,1,7,16,Geronimo studied Associate in Arts program in University of the Philippines Open University ( UP Open University ) .,1
+11666387,Koch,studied,the Johannes Gutenberg University,0,0,2,2,4,7,Koch first studied in the Johannes Gutenberg University of Mainz and later at the Eberhard Karls University of Tübingen .,1
+18724717,Raja,studied,Madurai Kamaraj University,12,12,13,13,20,22,"After pursuing B.com . , degree from American College , Madurai , Raja studied M.A.,(Journalism and Mass communications ) in Madurai Kamaraj University .",1
+21213764,Arbuzov,studied,the Kazan University,5,5,6,6,8,10,"A native of Bilyarsk , Arbuzov studied in the Kazan University under Alexander Mikhaylovich Zaytsev .",1
+22754170,Dmitry Lachinov,studied,the St. Petersburg University,0,1,2,2,4,7,"Dmitry Lachinov studied in the St. Petersburg University , where he was a pupil of Heinrich Lenz , Pafnuty Chebyshev and Feodor Petrushevsky .",1
+23846997,Cristina Almeida,studied,the Complutense University of Madrid,0,1,2,2,5,9,Cristina Almeida studied law in the Complutense University of Madrid and has been an active labour and feminist lawyer .,1
+23994533,Karpin,studied,the Hebrew University,0,0,2,2,6,8,Karpin had studied political science in the Hebrew University and mass communication in UCLA .,1
+27120975,Sergey Nalobin,studied,Moscow State University of International Relations,5,6,7,7,9,14,"From 1996 to 2001 , Sergey Nalobin studied in Moscow State University of International Relations , he graduated with excellence from the faculty of International Law .",1
+27437410,Xu Liu,studied,the Department of Pharmacy in China Pharmaceutical University,0,1,2,2,4,11,Xu Liu studied at the Department of Pharmacy in China Pharmaceutical University and graduated in 1959 .,1
+28497091,Miriam,studied,the Hebrew University,10,10,11,11,17,19,"In 1934 , the family emigrated to Palestine , where Miriam studied under Hans Jakob Polotsky in the Hebrew University in Jerusalem .",1
+29266333,Mher Grigoryan,studied,Lomonosov State University,0,1,2,2,5,7,"Mher Grigoryan studied law in Lomonosov State University ( Moscow ) from 1989 to 1991.He continued his education in Yerevan State University , where he studied law from 1991 to 1994 .",1
+38369062,Okan Avcı,studied,Istanbul University,0,1,2,2,20,21,Okan Avcı studied motion pictures and acting in Pera Fine Arts and in the meantime sub - aqua technology in Istanbul University .,1
+39415180,Liu,studying,Friedrich - Alexander University Erlangen - Nürnberg,4,4,6,6,8,14,"Since October 2015 , Liu is studying in Friedrich - Alexander University Erlangen - Nürnberg .",1
+40443027,Rukavishnikov,studied,Saint Petersburg University,10,10,11,11,14,16,"Born in Nizhny Novgorod to a millionaire staroobryadtsy merchant , Rukavishnikov studied archeology in Saint Petersburg University .",1
+40544877,Arroyo,studied,Florida International University,0,0,1,1,3,5,"Arroyo studied in Florida International University ( FIU ) from 1998 to 2001 , where he played for the campus ' team , the Golden Panthers .",1
+45184924,Dahl,studied,DeVry University,0,0,1,1,7,8,Dahl studied business and technology management in DeVry University in 2018 .,1
+45322084,Laviada,studied,the Autonomous University of Yucatán,0,0,1,1,4,8,Laviada studied medicine in the Autonomous University of Yucatán where he obtained his medical degree .,1
+46785499,Chu,studied,Soochow University,0,0,1,1,3,4,"Chu studied in Soochow University , and began to work in a studio of Central Motion Picture Company next to the school .",1
+46979923,Abdulfattah Owainat,studied,Zarqa Private University,0,1,7,7,13,15,"Abdulfattah Owainat , sometimes Abed el Fattah studied Islamic Law and Principles in Zarqa Private University , Jordan .",1
+48218456,Fedor Kubasov,studied,Mie University,0,1,7,7,11,12,"Fedor Kubasov , born in Saint Petersburg studied about ninja in Mie University under Yūji Yamada , one of the most prominet ninja researchers in Japan from 2007 .",1
+51301843,Shin,studied,Dankook University,4,4,5,5,8,9,"Born in 1977 , Shin studied theater in Dankook University .",1
+51439577,Andreas Berlin,studied,Uppsala University,0,1,5,5,7,8,Andreas Berlin ( 1746–73 ) studied in Uppsala University with Linnaeus as his student before travelling to London to find a botanical expedition he could join .,1
+55128591,Zuev,studied,Leningrad State University,0,0,1,1,3,5,"Zuev studied in Leningrad State University to major in the historical studies of the Eastern countries , successfully learning Classical Chinese , Middle Chinese , and modern Chinese .",1
+56587462,Herrera Luque,studied,the Central University of Venezuela,0,1,2,2,4,8,"Herrera Luque studied in the Central University of Venezuela ( UCV ) and later at the University of Salamanca ( 1952 ) , where he obtained his title of physician .",1
+58944607,Monika Tsõganova,studied,Tallinn University of Technology,4,5,6,6,8,11,From 1987 to 1991 Monika Tsõganova studied in Tallinn University of Technology .,1
+59604177,Tomomi Hayashi,studied,the Yokohama National University,4,5,6,6,8,11,"From 1990 to 1994 Tomomi Hayashi studied in the Yokohama National University ( 横浜国立大学 "" Yokohama Kokuritsu Daigaku "" ) in the department of architecture .",1
+60145538,Jang Se - yul,studied,the Mirim University,0,3,4,4,6,8,"Jang Se - yul studied in the Mirim University , and subsequently served as a hacker for the North Korean military .",1
+63858116,Michael Torke,studying,Yale University,1,2,4,4,8,9,"When Michael Torke was studying musical composition in Yale University , he decided to start an early series of compositions "" to celebrate without modulation a single color "" .",1
+64335346,Kieran,studied,Queens University,9,9,10,10,12,13,"Born in Belfast to Kate and Jim Creagh , Kieran studied in Queens University , Belfast , and at the age of 23 joined the Passionist order .",1
+72759459,Oliver,studied,the Dresden University of Technology,3,3,5,5,7,11,"After that , Oliver successfully studied in the Dresden University of Technology with political science as the main subject and sociology as the subsidiary subject ( Bachelor of Arts ) .",1
+73829827,Luis de Garrido,studied,the UPV Polytechnic University of Valencia,0,2,3,3,6,11,Luis de Garrido studied architecture in the UPV Polytechnic University of Valencia where he graduated with a doctorate .,1
+74816201,Samper,studied,the Pontifical Xavierian University,6,6,7,7,?,?,"After graduating from high school , Samper studied law in the Pontifical Xavierian University and later attended graduate school for journalism at Kansas University , United States .",1
+77083222,Yesken Sergebayev,studied,Leningrad University of Paintings,0,1,2,2,5,8,"Yesken Sergebayev studied sculpture in Leningrad University of Paintings , Sculpture and Architecture ( 1969 ) .",1
+77213127,Dimitris Sirinakis,studied,Washington University,8,9,10,10,14,15,"With the completion of his military service , Dimitris Sirinakis studied business management in Washington University and upon its graduation , he worked for a multinational company .",1
+79890211,Valdas Dambrauskas,studied,London Metropolitan University,0,1,2,2,8,10,"Valdas Dambrauskas studied Sport Science and Coaching in London Metropolitan University and worked as a coach in many famous youth academies , including Fulham , Manchester United and Brentford .",1
+86676565,Jeong,studied,Peking University,0,0,1,1,4,5,Jeong studied Arabic in Peking University and continued his studies in Cairo University .,1
+87005240,Yeow,studied,the National University of Malaysia,0,0,1,1,4,8,Yeow studied medicine in the National University of Malaysia ( UKM ) and received his Doctors of Human Letters from Summit University of Louisiana .,1
+89179592,Pak,studied,Tokyo Imperial University,0,0,1,1,4,6,Pak studied aesthetics in Tokyo Imperial University and became a professional dancer before moving to Germany .,1
+92466666,Rajen,studied,Stanford University,0,0,1,1,10,11,Rajen studied Computer Engineering ( 1994 - 1999 ) in Stanford University like Sergey Brin and Larry Page .,1
+97097055,Broun,studied,Edinburgh University,0,0,1,1,3,4,Broun studied in Edinburgh University and worked at the observatory in Makerstoun from 1842 to 1849 before moving to India to work in the Kingdom of Travancore .,1
+97255138,Ivan,studies,Columbia University,0,0,1,1,3,4,"Ivan studies in Columbia University ( NY , USA ) .",1
+99379084,Mendoza,studied,Adamson University,0,0,1,1,3,4,Mendoza studied in Adamson University with the degree in Bachelor of Science in Education .,1
+100480214,Xi,studied,Tsinghua University,5,5,6,6,13,14,"From 1998 to 2002 , Xi studied Marxist theory and ideological education in Tsinghua University , graduating from there with a doctorate in law and ideology in 2002 .",1
+102192441,Jordan Malinovski,studied,the Sofia University,0,1,2,2,4,6,"Jordan Malinovski studied in the Sofia University 1948 and obtained Dr. in chemistry 1958 , and D.Sc . 1959 .",1
+103461655,Tamarkin,studied,St. Petersburg University,0,0,1,1,3,5,Tamarkin studied in St. Petersburg University where he defended his dissertation in 1917 .,1
+103497475,Ivan,studied,Kiev University,0,0,1,1,3,4,Ivan studied in Kiev University from 1892 to 1896 .,1
+104524322,Gamboa,studied,Hofstra University,0,0,1,1,4,5,Gamboa studied communications in Hofstra University in New York .,1
+107461555,Baram,studied,Tel Aviv University,0,0,1,1,4,6,Baram studied literature in Tel Aviv University and was an editor in Am Oved publishing house .,1
+108680294,Gu,studied,Anhui University,7,7,8,8,11,12,"From February 1978 to February 1982 , Gu studied economics in Anhui University .",1
+110686604,Bush,studied,Cornell University,0,0,1,1,4,5,Bush studied law in Cornell University and passed the state bar shortly after graduating .,1
+111195768,Enn Tarto,studied,Tartu University,5,6,7,7,13,14,"After being imprisoned twice , Enn Tarto studied from 1969 to 1971 in Tartu University Estonian philology .",1
+115821253,Hossain,studied,Auckland University of Technology,0,0,2,2,6,9,Hossain also studied Public Health in Auckland University of Technology in 2016 and 2017 .,1
+120738187,William Vainchenker,studied,Paris VII University,0,1,2,2,9,11,William Vainchenker studied medicine from 1966 - 1971 in Paris VII University and passed his medical thesis in 1977 .,1
+121069875,Kasmamytov,studied,Metropolitan University,0,0,1,1,3,4,"Kasmamytov studied in Metropolitan University in Oslo ( Norway ) , Free University in Berlin ( Germany ) , American University in Central Asia ( Kyrgyzstan ) , Pierce College ( USA ) .",1
+132613030,Sulaiman,studied,Hasanuddin University,8,8,9,9,15,16,"Upon the completion of his basic studies , Sulaiman studied agricultural science in Makassar 's Hasanuddin University , starting in 1988 and obtaining his undergraduate degree in 1993 .",1
+135481087,Stepan Protsiuk,studied,Vasyl Stefanyk Precarpathian National University,0,1,2,2,4,8,Stepan Protsiuk studied in Vasyl Stefanyk Precarpathian National University and obtained a PhD ( Candidate of Sciences ) degree in philology in the Institute of Literature of National Academy of Sciences of Ukraine .,1
+139358484,Sushoma Sarkar,studied,Dhaka University,0,1,2,2,4,5,Sushoma Sarkar studied in Dhaka University .,1
+139817057,Yu,studying,Fu Jen Catholic University,0,0,3,3,5,8,"Yu is currently studying in Fu Jen Catholic University , department of philosophy .",1
+142125403,Reddy,studied,Osmania University,17,17,18,18,23,24,"Born on 4 October 1954 at Kowkuntla village in Chevella Mandal to a poor farming family , Reddy studied MA and LLB in Osmania University .",1
+143917853,Duncan,studied,Stanford University,0,0,1,1,3,4,"Duncan studied in Stanford University between 1923 and 1931 , while teaching botany and entomology at San José State College from 1922 to 1950 .",1
+147291819,Moore,studied,the Pontifical Xavierian University,5,5,6,6,9,12,"Before becoming a policeman , Moore studied medicine in the Pontifical Xavierian University and dropped out after a friend convinced him to join the National Police .",0
+147574070,Luo,studied,Ohio State University,3,3,4,4,6,8,"After graduation , Luo studied in Ohio State University , Columbia University and Cornell University .",1
+149318452,Ilyas Akhmadov,studied,the Polytechnic University of Volgograd,4,5,6,6,8,12,From 1978 to 1981 Ilyas Akhmadov studied in the Polytechnic University of Volgograd .,1
+151982787,Baganov,studied,Leningrad State University,0,0,1,1,4,6,"Baganov studied astronomy in Leningrad State University then transferred to the Leningrad State Institute for Theatre , Music and Cinematography .",1
+152529248,Bogdanovich,studied,the Moscow University,7,7,8,8,10,12,"Coming from a noble Ukrainian family , Bogdanovich studied in the Moscow University until 1761 .",1
+153553259,Granö,studied,Helsinki University,0,0,1,1,3,4,"Granö studied in Helsinki University , starting 1900 in botany but changing his major subject to geography .",1
+154946708,Fathulla Jameel,studied,Al - Azhar University,0,1,2,2,4,7,Fathulla Jameel studied in Al - Azhar University of Egypt and obtained a BA in Islamic Theology .,1
+157357039,Francis,studied,Ateneo de Naga University,0,0,1,1,3,6,Francis studied in Ateneo de Naga University and graduated from the Law School of Ateneo de Manila University in 1962 .,1
+160144421,Nelson,studied,Heidelberg University,3,3,4,4,9,10,"In 1901 , Nelson studied mathematics and philosophy in Heidelberg University for a short period of time , before going to the Humboldt University of Berlin from March 1901 – 1903 .",1
+165246391,Udaya Rana,studied,Cornell University of USA,0,1,3,3,5,8,Udaya Rana has studied in Cornell University of USA holds master 's degree,1
+167792976,William Parodi,studied,National University,0,1,2,2,7,8,William Parodi studied law in Panama 's National University and has a Master 's degree on financial crimes from Spain .,1
+168327353,Slavchev,studied,Veliko Tarnovo University,0,0,1,1,4,6,Slavchev studied law in Veliko Tarnovo University .,1
+170636710,Gómez Morín,studied,the National University of Mexico,0,1,2,2,12,16,"Gómez Morín studied Law during the days of the Mexican Revolution in the National University of Mexico ( UNAM ) , and there , as a student , he struggled to gain autonomy for the university of which he served as Rector in 1933 .",1
+173123426,Jürgen Dueball,studied,Free University,0,1,2,2,7,8,"Jürgen Dueball studied mathematics and physics in Free University of Berlin , also interested in astronomy .",1
+174045915,Daskalaki,studied,the Aristotle University of Thessaloniki,0,0,1,1,4,8,Daskalaki studied law in the Aristotle University of Thessaloniki .,1
+175327341,Joon,studied,Birendra Narayan Chakraborty University,0,0,1,1,3,6,Joon studied in Birendra Narayan Chakraborty University .,1
+175909972,Mohd Ateeque,Studied,Jawaharlal Nehru University,0,1,12,12,14,16,"Mohd Ateeque , who hails from Garhi Dilawar , Amethi , has Studied in Jawaharlal Nehru University , New Delhi from where he completed his Post Graduation in Spanish & Latin American Studies ; and he has rendered his services to WIPRO , Oracle , Accenture and Bank of America as Consultant , Team Leader and Advisor with over all experience of more than 8 years in Corporate industry .",1
+176473543,Zeynep Sevde Paksu,studied,Yildiz Technical University,0,2,3,3,6,8,Zeynep Sevde Paksu studied physics in Yildiz Technical University .,1
+185991171,Peter J. Schwendinger,studied,Innsbruck University,0,2,8,8,14,15,"Peter J. Schwendinger , other Austrian arachnologist , studied with Konrad Thaler , in Innsbruck University .",1
+186613175,Li,studied,National Taiwan University,0,0,1,1,5,7,"Li studied civil engineering in National Taiwan University , and after graduation worked in Lion Pencil Corporation which was founded by his father .",1
+190361020,Hadjipapa,studied,Medical University of Sofia,0,0,1,1,5,8,Hadjipapa studied Medicine degree in Medical University of Sofia and postgraduate of General Medicine at University of Surrey .,1
+191554923,Zhang,studying,Beijing Sport University,3,3,6,6,8,10,"Since 2016 , Zhang has been studying in Beijing Sport University .",1
+192244844,Jander,studied,Technical University of Munich,0,0,1,1,3,6,"Jander studied in Technical University of Munich , and at University of Berlin where he received his Ph . D for work with Arthur Rosenheim in 1917 .",1

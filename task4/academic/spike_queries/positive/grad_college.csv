@@ -1,0 +1,32 @@
+sentence_id,John,graduated,Yale,John_first_index,John_last_index,graduated_first_index,graduated_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+2942648,Streisand,graduated,Trinity College,0,0,2,2,4,5,"Streisand was graduated from Trinity College in Hartford , Connecticut , with a BA in History .",1
+18523124,Reddall,graduated,Yale College,2,2,4,4,6,7,In 1997 Reddall was graduated from Yale College with a Bachelor of Arts in Theater Studies .,1
+22297486,Bigelow,graduated,Williams College,6,6,8,8,10,11,"Born in Petersham , Massachusetts , Bigelow was graduated from Williams College , Williamstown , Massachusetts , in 1803 .",1
+23789745,O'Connell,graduated,Boston College,0,0,2,2,4,5,O'Connell was graduated from Boston College in 1893 and from Harvard University Law School in 1896 .,1
+26040649,Kwong,graduated,Lingnan College,0,0,3,3,5,6,Kwong was first graduated from Lingnan College with a Bachelor of Arts in English Language degree in 1977 .,1
+31050010,Powell,graduated,Princeton College,7,7,9,9,11,12,"Born in Loudoun County , Virginia , Powell was graduated from Princeton College .",1
+31056086,Woodruff,graduated,Yale College,0,0,2,2,4,5,Woodruff was graduated from Yale College in 1825 .,1
+40830887,Boren,graduated,East Central College,0,0,2,2,4,6,"Boren was graduated from East Central College at Ada , Oklahoma , in 1930 .",1
+49736395,Barbour,graduated,Amherst College,6,6,8,8,10,11,"Born in Canton , Connecticut , Barbour was graduated from Amherst College in 1837 .",1
+50034502,Mark,graduated,Maryland College for Women,4,4,6,6,8,11,"In July 1875 , Mark was graduated from Maryland College for Women , Lutherville , Maryland .",1
+51553528,Clemens,graduated,Westmont College,0,0,2,2,6,7,Clemens was graduated with honors from Westmont College in 1997 with a bachelor 's degree in anthropology and with a master 's degree in broadcast journalism from University of Southern California in 2002 .,1
+62326715,Asher,graduated,Keble College,0,0,2,2,4,5,Asher was graduated from Keble College at Oxford University in 2005 with a degree in Spanish and French .,1
+67790874,Blumer,graduated,Framingham State College,0,0,2,2,7,9,"Blumer was graduated magna cum laude from Framingham State College , and subsequently earned an MBA with distinctions from the Simmons College Graduate School of Management .",1
+93675461,Watson,graduated,Dickinson College,6,6,8,8,10,11,"Born near London , Ohio , Watson was graduated from Dickinson College , Carlisle , Pennsylvania , in 1871 and from the law department of Boston University in 1873 .",1
+95052110,Monroe,graduated,Smith College,0,0,2,2,6,7,"Monroe was graduated with honors from Smith College , where she attended the University of Geneva and the Graduate Institute of International Studies in Geneva her junior year .",1
+111104404,Keyes,graduated,Ursinus College,6,6,9,9,11,12,"Born in Frazer , Pennsylvania , Keyes was a graduated from Ursinus College in Pennsylvania , where she earned nine varsity letters before graduating with honors .",1
+114164553,McClellan,graduated,Williams College,7,7,9,9,11,12,"Born in Livingston , New York , McClellan was graduated from Williams College , Williamstown , Massachusetts , in 1825 .",1
+115869044,Carroll,graduated,Haverford College,5,5,7,7,9,10,"In 1963 , the younger Carroll was graduated from Haverford College in Pennsylvania with a bachelor 's degree in English .",1
+117407470,Beckwith,graduated,Trinity College,0,0,2,2,4,5,"Beckwith was graduated from Trinity College , Hartford in 1852 and two years later was ordained as a deacon and later priest in the Episcopal Church .",1
+117718876,Merritt,graduated,Washington College,6,6,8,8,10,11,"Born in Staunton , Virginia , Merritt was graduated from Washington College , Lexington , Virginia , in 1848 .",1
+126198383,Ervin,graduated,Rhode Island College,5,5,7,7,9,11,"Born in Williamsburg District , Ervin was graduated from Rhode Island College ( now Brown University ) , in 1797 .",1
+132975696,Suheil al - Hassan,graduated,the Homs Military College,3,6,8,8,15,18,"In 1991 , Suheil al - Hassan was graduated with the rank of Lieutenant from the Homs Military College .",1
+145174713,Hynes,graduated,Harvard College,0,0,2,2,4,5,Hynes was graduated from Harvard College and co - captained the 1980 hockey team there .,1
+151278073,Kvale,graduated,Luther College,0,0,2,2,4,5,"Kvale was graduated from Luther College in Decorah , Iowa , in 1917 and served in the United States Army during the First World War as a sergeant in a machine gun corps , from September 7 , 1917 , to August 4 , 1919 .",1
+151414811,Barney,graduated,Smith College,3,3,5,5,7,8,"In 1908 , Barney was graduated from Smith College with a Bachelor of Arts degree .",1
+153980566,Noda,graduated,the Osaka College of Music,0,0,2,2,4,8,Noda was graduated from the Osaka College of Music as a saxophonist .,1
+158865687,Taylor,graduated,Rutgers College,0,0,2,2,13,14,"Taylor was graduated with a Bachelor of Arts ( A.B. ) degree from Rutgers College in New Brunswick , New Jersey in 1867 .",1
+165119990,Sawyer,graduated,Dartmouth College,8,8,10,10,12,13,"Born in Mont Vernon , New Hampshire , Sawyer was graduated from Dartmouth College , Hanover , New Hampshire , in 1833 .",1
+167930211,Maud,graduated,Vassar College,6,6,8,8,10,11,"The third of four daughters , Maud was graduated from Vassar College in 1912 , and later studied at the New York School of Fine and Applied Art .",1
+176753079,Prokosch,graduated,Haverford College,0,0,2,2,4,5,Prokosch was graduated from Haverford College in 1925 and received a Ph.D. in English in 1932 from Yale University .,1
+183278265,Hayes,graduated,Clark Community College,3,3,5,5,7,9,"In 1964 , Hayes was graduated from Clark Community College in Vancouver , Washington .",1

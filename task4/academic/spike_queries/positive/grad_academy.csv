@@ -1,0 +1,5 @@
+sentence_id,John,graduated,Yale,John_first_index,John_last_index,graduated_first_index,graduated_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+115185766,Tinaikar,graduated,the Indian Military Academy,0,0,2,2,4,7,Tinaikar was graduated from the Indian Military Academy in 1983 .,1
+124188751,Mitchell,graduated,Cheshire Academy,7,7,9,9,11,12,"Born in New Haven , Connecticut , Mitchell was graduated from Cheshire Academy in 1863 .",1
+126321736,Tracey,graduated,The Albany Academy,7,7,9,9,11,13,"Born in Albany , New York , Tracey was graduated from The Albany Academy in 1866 .",1
+130478082,Merriam,graduated,the Appleton Academy,0,0,2,2,4,6,"Merriam was graduated from the Appleton Academy , a private school in New Ipswich , New Hampshire .",1

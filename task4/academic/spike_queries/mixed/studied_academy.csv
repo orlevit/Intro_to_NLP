@@ -1,0 +1,19 @@
+sentence_id,John,studied,Yale,John_first_index,John_last_index,studied_first_index,studied_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+13646484,Rami Maymon,studied,Bezalel Academy of Art and Design,0,1,2,2,4,9,Rami Maymon studied in Bezalel Academy of Art and Design from 1995 till 1999 .,1
+18776172,Nami,studied,the Ottoman Military Academy,0,0,1,1,3,6,Nami studied in the Ottoman Military Academy and received military training in Paris .,1
+35054245,Rivera,studied,the San Carlos Academy,0,0,1,1,3,6,"Rivera studied in the San Carlos Academy , a prestigious art school in Mexico City .",1
+53173483,Hofmann,studied,the Vienna Academy of Fine Arts,4,4,5,5,7,12,"Born in Vienna , Hofmann studied in the Vienna Academy of Fine Arts from 1895 to 1904 .",1
+72012031,Edward Hargitt,studied,the Royal Scottish Academy,0,1,7,7,10,13,Edward Hargitt ( born in Edinburgh ) studied art in the Royal Scottish Academy and was a fairly good painter of landscapes .,1
+108681452,Krzysztof Rogacewicz,studied,Ludwik Solski Academy,0,1,2,2,5,7,"Krzysztof Rogacewicz studied acting in Ludwik Solski Academy for the Dramatic Arts in Wrocław , the Department of Puppets .",1
+113658615,Zinovjev,studied,Sibelius Academy,0,0,1,1,4,5,Zinovjev studied composition in Sibelius Academy ( 2010–15 ) and in HfM - Karlsruhe ( 2013–14 ) under guidance of Tapio Nevanlinna and prof . Wolfgang Rihm .,1
+126285295,Rossin,studied,the National Academy of Arts,5,5,6,6,9,13,"From 1985 to 1991 , Rossin studied painting in the National Academy of Arts , Sofia , Bulgaria where he graduated cum laude with a Masters of Art degree .",1
+128897303,Vähä,studied,the Border Academy,3,3,4,4,6,8,"In 1925–28 , Vähä studied in the Border Academy , but was sent to the Far East after an old acquaintance recognized him .",0
+136757233,Vassileios,studied,the Hellenic Military Academy,6,6,7,7,9,12,"When he finished secondary school , Vassileios studied in the Hellenic Military Academy .",1
+145355847,Carpenter,studied,the British Royal Academy,0,0,1,1,4,7,"Carpenter studied painting in the British Royal Academy and exhibited there , and at the British Institution "" ca "" . 1841 - 1842 .",1
+165539363,Nikolay Sauerweid,studied,the Imperial Academy of Arts,0,1,2,2,4,8,Nikolay Sauerweid studied in the Imperial Academy of Arts in Saint Petersburg .,1
+169553822,Wettenhovi - Aspa,studied,the Royal Danish Academy of Fine Arts,0,2,3,3,8,14,Wettenhovi - Aspa studied art in Copenhagen in the Royal Danish Academy of Fine Arts from 1888 to 1891 .,1
+176206490,Jaan Tiidemann,studied,the Estonian Academy of Arts,0,1,2,2,4,8,Jaan Tiidemann studied in the Estonian Academy of Arts in the department of architecture .,1
+183222318,Rajiv Dabhadkar,studied,General Education Academy,0,1,3,3,5,7,Rajiv Dabhadkar has studied in General Education Academy .,1
+187109610,Adam,studied,the Art Academy of Cincinnati,2,2,3,3,5,9,""" Mr. Adam studied in the Art Academy of Cincinnati , and is now numbered among its most successful graduates .",1
+188742161,Vita Opolskytė,studied,Vilnius Academy of Arts,0,1,2,2,5,8,Vita Opolskytė studied painting in Vilnius Academy of Arts and Antwerpen Karel de Grote University College .,1
+190921907,Pavel Svedomsky,studied,the Düsseldorf Academy of Arts,0,1,2,2,5,9,"Pavel Svedomsky studied first in the Düsseldorf Academy of Arts , then in Munich under Eduard von Gebhardt and Mihály Munkácsy .",1

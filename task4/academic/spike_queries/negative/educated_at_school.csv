@@ -1,0 +1,6 @@
+sentence_id,John,educated,Yale,John_first_index,John_last_index,educated_first_index,educated_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+18809836,Gribble,educated,Ulverston Grammar School,0,0,1,1,3,5,"Gribble educated at Ulverston Grammar School ; Queens ' College , Cambridge ; and Westcott House , Cambridge .",?
+57661031,J. O. Wisdom,educated,Earlsfort House School,0,2,11,11,13,15,"J. O. Wisdom ( as he was often cited ) was educated at Earlsfort House School and then at Trinity College Dublin , where he studied under the Hegelian scholar H. S. Macran .",?
+107646295,Hellmuth,educated,the Missouri School of Mines,0,0,1,1,3,7,Hellmuth educated at the Missouri School of Mines and worked in a practice with Louis Spiering .,0
+109834946,Thatcher,educated,Farnworth Grammar School,0,0,1,1,3,5,"Thatcher educated at Farnworth Grammar School , Liverpool College and Fitzwilliam House , Cambridge .",?
+114968924,Zachary Pearce,educated,Westminster School,0,1,2,2,7,8,"Zachary Pearce educated him privately , at Westminster School .",0

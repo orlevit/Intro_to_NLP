@@ -1,0 +1,12 @@
+sentence_id,John,graduated,Yale,John_first_index,John_last_index,graduated_first_index,graduated_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+21075839,Lau,graduate,Caltech,5,5,8,8,10,10,"Later , Webb blogged that Lau did not graduate from Caltech as was claimed in the company 's appointment announcement .",0
+42623502,Gardner,graduate,Oxford,4,4,8,8,10,10,"Despite fulfilling requirements , Gardner did not formally graduate from Oxford .",0
+46564708,Buchwald,graduate,Forest Hills High School,0,0,3,3,5,8,"Buchwald did not graduate from Forest Hills High School , and ran away from home at age 17 .",0
+103566143,Lechner,graduate,the University of Wisconsin - Whitewater,0,0,3,3,5,10,"Lechner did not graduate from the University of Wisconsin - Whitewater in 2006 , 2007 , 2008 , or 2009 , despite having enough credits to graduate with nine majors and five minors .",0
+123817101,Thomas,graduate,Yale,0,0,3,3,?,?,"Thomas did not graduate from Yale , rather , she finished her master 's degree at the Royal Academy of Music in London , being awarded the Degree of the Advanced Course .",1
+140536247,Edmonson,graduate,the University of Arizona,0,0,3,3,5,8,"Edmonson did not graduate from the University of Arizona , but he "" became locally famous for serenading college girls "" and met first his wife while studying there .",0
+147059981,Mary,graduate,the Toronto Normal School,0,0,3,3,5,8,"Mary did not graduate from the Toronto Normal School , but she was able to undergo enough training to occupy a teaching position at a convent in Monroe , Michigan , on 31 August 1859 at the age of 23 .",0
+151777932,Eckford,graduate,Central High School,14,14,17,17,19,21,"All of the city 's high schools were closed the following year , so Eckford did not graduate from Central High School .",0
+161933868,José Cid,graduate,INEF,0,1,4,4,6,6,"José Cid did not graduate from INEF either , because he was called to serve as an officer of the Portuguese Air Force .",0
+169679122,Earhart,graduate,the Ogontz School,0,0,3,3,5,7,"Earhart did not graduate from the Ogontz School , leaving months before the ceremony in order to enlist as a nurse 's aide at Spadina Military Hospital in Toronto , Canada .",0
+172671435,Bettencourt,graduate,the University of New Hampshire School of Law,5,5,8,8,10,17,"Due to this scandal , Bettencourt did not graduate from the University of New Hampshire School of Law as originally intended , but has since graduated from UNHL with a law degree and accepted a consultant position with RightVoter partners .",1

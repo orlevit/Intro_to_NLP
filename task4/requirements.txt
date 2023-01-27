@@ -1,0 +1,8 @@
+mistune==0.8.4
+pandas==1.4.4
+ply==3.11
+pydantic==1.8.2
+PyQt5-sip==12.11.0
+scikit-learn==0.23.2
+sklearn-crfsuite==0.3.6
+webencodings==0.5.1

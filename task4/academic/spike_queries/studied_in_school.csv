@@ -1,0 +1,115 @@
+sentence_id,John,studied,Yale,John_first_index,John_last_index,studied_first_index,studied_last_index,Yale_first_index,Yale_last_index,sentence_text,label
+1821455,Li,studied,Shipai Central School,6,6,7,7,12,14,"At the age of 11 , Li studied Chinese traditional opera in Shipai Central School .",0
+3462860,Tessy Thomas,studied,Higher Secondary School,0,1,2,2,7,9,Tessy Thomas studied in St. Michael 's Higher Secondary School and St. Joseph 's Girl 's Higher Secondary School in Alleppey ( Alappzuha ) .,0
+5053764,Moo,studied,Shu Qun Primary School,0,0,1,1,?,?,"Moo studied in Shu Qun Primary School , The Chinese High School and Jurong Junior College in Singapore .",1
+5653173,Kalli Kalde,studied,Tartu Art School,4,5,6,6,10,12,From 1982 to 1986 Kalli Kalde studied graphic design in Tartu Art School .,1
+7129120,Nakasone Yasuhiro,studied,Shizuoka High School,0,1,15,15,19,21,"Nakasone Yasuhiro , who was a Prime Minister of Japan and a world leader , studied in the prestigious Shizuoka High School ( now part of Shizuoka University ) .",0
+7172359,Suryadevara,studied,Senior Secondary School,0,0,1,1,6,8,"Suryadevara studied in St John 's Senior Secondary School in Mandaveli , Chennai .",0
+7177219,Elson,studied,Yuhua Primary School,0,0,1,1,?,?,"Elson studied in Yuhua Primary School , Kranji Secondary School and Pioneer Junior College .",1
+8469085,Ikonnikov,studied,Kiev Kadet School,4,4,5,5,7,9,In 1852 - 1861 Ikonnikov studied in Kiev Kadet School on state funds .,1
+10468491,Jemimah Rodrigues,studied,Convent High School,0,1,2,2,?,?,"Jemimah Rodrigues studied in St. Joseph 's Convent High School , Mumbai and later in Rizvi College of Arts , Science & Commerce .",1
+12045817,Neto,studied,the Lisbon Industrial School,9,9,10,10,14,17,"Born in Lisbon on April 27 , 1936 , Neto studied at first in the Lisbon Industrial School and then at the Commercial School of Marinha Grande , a town from where his family had come from to Lisbon and where he moved at age 14 .",?
+14589983,Pantyukhov,studied,Pavlovsk Military School,5,5,6,6,8,10,"From 1899 to 1901 , Pantyukhov studied in Pavlovsk Military School .",?
+15330276,Mahaveer,studied,Sanskar School Jaipur,0,0,1,1,3,5,Mahaveer studied in Sanskar School Jaipur and is a national basketball player .,?
+15525550,Jānis Ozols,studied,Emīls Dārziņš Music School,0,1,2,2,4,7,Jānis Ozols studied in Emīls Dārziņš Music School between 1989 and 1996 and the Riga Dome Choir School ( RDCS ) in choir conducting class between 1996 and 1999 .,?
+16441129,Donat Grigorovich Korchikov,studied,Kharkiv,2,4,15,15,36,36,"Associate Prof. Donat Grigorovich Korchikov , PhD , institute director from 1963 to 1966 , studied at Kharkiv National Medical University from 1941 to 1942 , at Tashkent Medical Institute till 1943 , then in the Kharkiv infantry mortar school as a Second World War combatant .",1
+18103675,Cengiz Aktar,studied,Galatasaray High School,6,7,8,8,?,?,"Born in Istanbul in 1955 , Cengiz Aktar studied in Galatasaray High School then went on to study in the Sorbonne in Paris where he gained a Doctorate in Economics in 1982 .",1
+19004542,Eugen Sterpu,studied,Arts High School Moldavia,0,1,2,2,?,?,Eugen Sterpu studied 1975–1981 in Arts High School Moldavia and 1981–1989 in Eesti Riiklik Kunstiinstituut ( renamed 1989 as Eesti Kunstiakadeemia / Estonian Academy of Arts ) .,1
+20938237,Cheng,studied,Shenzhen Art School,0,0,1,1,3,5,"Cheng studied in Shenzhen Art School , and graduated from School of Performing Arts Seoul in 2016 , where she studied under the Department of Practical Dance .",?
+23608932,Parra,studied,the Salesian School of San José,4,4,5,5,7,12,"In that city , Parra studied in the Salesian School of San José .",?
+26835575,Uma,studied,the Delhi Public School,0,0,1,1,3,6,"Uma studied in the Delhi Public School and , later , Mount Carmel College , Bangalore .",?
+27986977,Yahya,studied,Brown Cambridge School,0,0,1,1,7,9,Yahya studied in the prestigious Col . Brown Cambridge School Dehradun and later enrolled at the University of Punjab from where he passed B.A.,1
+29267954,Vadivelu,studied,Dharmapuri High School,0,0,11,11,13,15,"Vadivelu , born at Gollahalli , Dharmapuri , Tamil Nadu , studied in Dharmapuri High School , discontinued his studies for taking part in the national freedom struggle .",0
+31025835,Tan,studied,the Dong Shan School,0,0,1,1,3,6,Tan studied in the Dong Shan School .,?
+34532271,Baskakov,studied,the Astrakhan School of Art,2,2,3,3,13,17,In 1933–1939 Baskakov studied under the known Russian art educator Pavel Vlasov in the Astrakhan School of Art .,?
+36038927,Samuthirakani,studied,T.N.P.M.M.N.Hr,0,0,1,1,?,?,"Samuthirakani studied school in T.N.P.M.M.N.Hr . Sec School and B.Sc.(Mathematics ) , in Rajapalayam Rajus College , and Bachelor of Law from Ambedkar Law College , Chennai .",?
+36038927,Samuthirakani,studied,Sec School,0,0,1,1,6,7,"Samuthirakani studied school in T.N.P.M.M.N.Hr . Sec School and B.Sc.(Mathematics ) , in Rajapalayam Rajus College , and Bachelor of Law from Ambedkar Law College , Chennai .",?
+37058009,Kiram III,studied,Jolo Central Elementary School,0,1,2,2,4,7,Kiram III studied in Jolo Central Elementary School from 1946 to 1951 .,0
+38381503,Korngold,studied,the Warsaw School of Political Sciences,4,4,5,5,8,13,"Before the war , Korngold studied journalism in the Warsaw School of Political Sciences .",0
+38745348,Lim,studied,CHIJ Katong Convent Primary School,0,0,1,1,3,7,Lim studied in CHIJ Katong Convent Primary School then at Tanjong Katong Girls ' School .,0
+39115007,Esteban,studied,the Corazón de María School of Bilbao,0,0,1,1,3,9,Esteban studied in the Corazón de María School of Bilbao and he studied baccalaureate in the Central High School of Bilbao .,?
+41938927,Tychyna,studied,Chernihiv,2,2,3,3,6,6,Simultaneously young Tychyna studied in the Chernihiv theological school .,?
+44155161,Boris,studied,Classical School of Archangelsk Province,4,4,5,5,7,11,From 1903 to 1912 Boris studied in Classical School of Archangelsk Province and after finishing it went to Moscow to study at the Stroganov ’s Artistic - Industrial High School .,?
+45332139,K. Ramasamy,studied,Veludaiyar High School,2,3,4,4,8,10,"Prof. Dr. K. Ramasamy studied secondary education in Veludaiyar High School , Tiruvarur and Board High School , Aranthangi .",0
+48620773,Ahmad,studied,High School,0,0,1,1,?,?,Ahmad studied in St Gregory 's High School and Notre Dame College .,1
+48794485,Lugassy,studied,Thelma Yellin Arts School,0,0,1,1,3,6,Lugassy studied in Thelma Yellin Arts School in Tel Aviv .,?
+50455483,Navin Nischol,studied,Bangalore Military School,0,1,2,2,4,6,"Navin Nischol studied in Bangalore Military School , Bangalore , erstwhile King George Royal India Military College , Bangalore .",
+54822202,Chan,studied,Fairfield Methodist School,0,0,1,1,3,5,"Chan studied in Fairfield Methodist School , Raffles Girls ' School , Raffles Junior College and Lasalle - SIA College of the Arts .",
+56355958,Liao,studied,Taipei Municipal Hulu Elementary School,4,4,5,5,7,11,"In his childhood , Liao studied in Taipei Municipal Hulu Elementary School , Taipei Municipal Chongqing Junior School , and Taipei Municipal Song Shan High School of Commerce .",
+59631499,Darshana,studied,Bhanubhakta Memorial Higher Secondary School,0,0,2,2,4,8,Darshana has studied in Bhanubhakta Memorial Higher Secondary School and National College Kathmandu .,
+59688877,Zong,studied,Bedok View Secondary School,0,0,1,1,3,6,Zong studied in Bedok View Secondary School .,
+61159805,Grodecki,studied,the National Film School,0,0,1,1,8,11,Grodecki studied with the film direction faculty in the National Film School in Łódź under the supervision of Wojciech Jerzy Has .,
+61230141,Hu,studied,Nantong High School,3,3,4,4,6,8,"In 1935 , Hu studied in Nantong High School .",
+62004962,Damodos,studied,the Flaginian School,0,0,1,1,4,6,Damodos studied law in the Flaginian School in Venice and philosophy in the Collegio Veneto in Padova .,
+62700380,Queenie,studied,Rosaryhill School,0,0,1,1,3,4,"Queenie studied in Rosaryhill School , then continued her education at the University of Washington , Seattle , United States .",
+63768331,Ashika,studied,Bishop Sargant School,0,0,1,1,3,5,"Ashika studied in Bishop Sargant School , Tumkur and later moved to Bangalore , the capital of Karnataka , for pre - in Jyoti Nivas College , where she auditioned for a Clean and Clear Fresh Face Bangalore contest , emerging as the runner - up of Miss Fresh Face 2014 .",
+63888195,Hagai,studied,Rimon School of Jazz and Contemporary Music,0,0,1,1,3,9,"Hagai studied in Rimon School of Jazz and Contemporary Music , where he met Itai .",
+64660101,Moya,studied,Bourke Street Studio School,3,3,4,4,10,13,"After NGV , Moya studied under George Bell in the Bourke Street Studio School in Melbourne .",
+64918330,Indrek Allmann,studied,Secondary School,4,5,6,6,10,11,From 1987 to 1990 Indrek Allmann studied in the 4th Secondary School in Viljandi .,
+65039290,Igor Gubsky,studied,Voroshilovgrad Art School,2,3,5,5,8,10,"From 1969 Igor Gubsky has studied art in Voroshilovgrad Art School , in 1973 he graduated with honors and received a specialty of art and drafting teacher .",
+68319605,Kanhaiya Lal Misra,studied,the Theosophical School,2,4,5,5,12,14,Pt . Kanhaiya Lal Misra studied at Banaras ( Varanasi ) in the Theosophical School under Dr. Mrs. Annie Beasant .,
+70439407,Singh,studied,Guru Nanak School,6,6,7,7,9,11,"Born in Batala , Punjab , Singh studied in Guru Nanak School , Batala , and later at Lyallpur Khalsa College at Jalandhar , where he started playing university level hockey tournaments .",
+72373332,Vasishta,studied,Sharada Vilas School,0,0,4,4,6,8,"Vasishta from Mysore , studied in Sharada Vilas School and Sadvidhya School .",
+72864477,Meiyun,studied,Shenzhen High School,0,0,2,2,4,6,Meiyun has studied in Shenzhen High School from 2013 to 2016 .,
+73281225,Sulaiman,studied,Bartley Secondary School,0,0,1,1,3,5,Sulaiman studied in Bartley Secondary School and Victoria School in Singapore .,
+75053403,Lee,studied,Catholic High School,0,0,1,1,3,5,Lee studied in Catholic High School and Chung Cheng High School .,
+75686357,Smith,studied,the Woodrow Wilson School of Public and International Affairs,0,0,1,1,3,11,"Smith studied in the Woodrow Wilson School of Public and International Affairs and graduated with a B.A. in 1981 after completing a 199 - page long senior thesis titled "" The Politics of Refugees : The Development and Promotion of International Refugee Law "" .",
+76107619,Noah Kin,studied,Media Upper Secondary School,0,1,3,3,7,10,Noah Kin has studied in Helsinki ’s Media Upper Secondary School .,
+76960333,Irina Vysheslavska,studied,State Art School,0,1,2,2,6,8,Irina Vysheslavska studied in Kiev 's State Art School with Taras Shevchenko .,
+81046723,Deustua,studied,Guadalupe National School,0,0,1,1,3,5,Deustua studied in Guadalupe National School and he graduated from Lima 's Universidad de San Marcos .,
+81105213,Haji Idrees Palh,studied,Taleem Balgan School,0,2,3,3,5,7,"Haji Idrees Palh studied in Taleem Balgan School , he became a social activist and was elected many times as a member of the union council .",
+85430725,Wei,studied,Far Eastern Vocational School,0,0,1,1,5,8,Wei studied Electrical Engineering in Far Eastern Vocational School ( Today 's Far East University ) in Tainan .,
+85643307,Georgieva,studies,Music School,0,0,1,1,3,4,"Georgieva studies in Music School "" Lyubomir Pipkov "" in Sofia .",
+88009916,Shyam Balasubramanian,studied,the Cathedral & John Cannon School,0,1,2,2,4,9,"Shyam Balasubramanian studied in the Cathedral & John Cannon School , the Indian Institute of Technology , Kharagpur , and the Indian Institute of Management , Ahmedabad .",
+90702141,Gunapandian,studied,Margoschis Higher Secondary School,0,0,22,22,24,27,"Gunapandian , along with Gandhi ( former Indian Defender , Tamil Nadu state football team captain , and RBI football player ) studied in Margoschis Higher Secondary School , Nazareth , Tamil Nadu .",
+92181699,Oscar Morelli,studied,the Military School of Mexico,21,22,23,23,25,29,"The son of Oscar Bonfiglio ( military and goalkeeper of the national football team of Mexico ) and Mercedes Mouet , Oscar Morelli studied in the Military School of Mexico and acting with Andrés Soler and Seki Sano .",
+99323785,Héctor Luis,studied,the University of Puerto Rico Elementary School and High School,0,1,2,2,4,13,"Héctor Luis studied in the University of Puerto Rico Elementary School and High School , but completed High School in Spain in the America School of Madrid .",
+104787003,Bapu,studied,Taylor High School,0,0,1,1,3,5,"Bapu studied in Taylor High School , Narasapuram during these years .",
+104787005,Venkataramana,studied,"Taylor high School , Narasapram",26,26,28,28,30,34,"Mullapudi Venkataramana 's father , who was working as a Sub - Registrar was posted at Narasapuram during the years 1942 - 45 and so , Venkataramana also studied in Taylor high School , Narasapram , during those years .",
+105250656,Eleanor Parke Custis,studied,Corcoran School of the Arts and Design,0,2,3,3,5,11,Eleanor Parke Custis studied in Corcoran School of the Arts and Design under Edmund C. Tarbell and Pennsylvania Academy of the Fine Arts with Henry B. Snell .,
+108472154,Oscar Carreras,studied,the National School of Arts,1,2,9,9,11,15,"Violinist Oscar Carreras ( 1944 - 19 ? ) studied in the National School of Arts in Havana , Cuba , and joined the Matanzas Symphony Orchestra .",
+108914263,Heng,studied,Bukit Panjang Government High School,0,0,1,1,3,7,Heng studied in Bukit Panjang Government High School and Thomson Secondary School and was good at Chinese composition .,
+111591873,Kay Hwa,studied,Boon Lay Primary School,1,2,4,4,6,9,"Low Kay Hwa has studied in Boon Lay Primary School , Hong Kah Secondary School and Singapore Polytechnic , and he is pursuing his B.A. in English and literature from SIM University on a part - time basis .",
+112054021,Ahmed,studied,Chittagong Collegiate School,0,0,1,1,3,5,Ahmed studied in Chittagong Collegiate School .,
+115392977,Ramón de la Sagra,studied,Nautical School of A Coruña,0,3,4,4,10,14,Ramón de la Sagra studied physics for one year in Nautical School of A Coruña .,
+116628734,Jaramillo Arango,studied,the St. Thomas Aquinas School,0,1,2,2,5,9,"Jaramillo Arango studied first in the St. Thomas Aquinas School in Manizales , and then in the St. Bartholomew Major College in Bogotá .",
+117532726,Lee Wen,studied,Kim Keat Primary School and Raffles Institution,0,1,2,2,7,13,Lee Wen studied in the now defunct Kim Keat Primary School and Raffles Institution .,
+118374283,Engels Kozlov,studied,Tavricheskaya Art School,2,3,4,4,13,15,"In 1947–1949 Engels Kozlov studied in the Yaroslavl Art College , then in Tavricheskaya Art School in Leningrad ( 1949–1950 ) .",
+119880431,Tõnis Kimmel,studied,Secondary School of Tallinn,4,5,6,6,10,13,From 1984 to 1992 Tõnis Kimmel studied in the 7th Secondary School of Tallinn ( today ’s Tallinn English College ) and from 1992 to 1995 in the King Gustav Adolf 's Grammar School .,
+120100662,Georgy Kovenchuk,studied,Leningrad Secondary Art School,0,1,2,2,4,7,"Georgy Kovenchuk studied in Leningrad Secondary Art School , then at the graphic faculty of the Leningrad Institute of painting , sculpture and architecture named after I. E. Repin , in the workshop of A. F. Pakhomov ( 1954 - 1960 ) .",
+124990473,Rajora,studied,the Army Public School,0,0,1,1,3,6,Rajora studied in the Army Public School .,
+125451865,Dilhara,studied,Negombo South International School,0,0,1,1,3,6,"Dilhara studied in Negombo South International School until her GCE Ordinary Level , which she sat as a private candidate .",
+129773240,Putong,studied,the Tagbilaran Spanish Public School,1,1,2,2,4,8,Dr. Putong studied in the Tagbilaran Spanish Public School and the Tagbilaran School later established by the first American teachers in the Philippines ( called Thomasites ) .,
+131359747,Vācietis,studied,Trapane,0,0,1,1,3,3,Vācietis studied in Trapane primary school and later in Gaujiena secondary school .,
+131594380,Paulo,studied,the National Music School,28,28,30,30,32,35,"Born in São José do Rio Preto , where his father was the maestro of a marching band and encouraged his son to train as a tailor , Paulo instead studied in the National Music School and performed with the Brazilian Symphonic Orchestra .",
+132087309,Levon Ambartsumian,studied,the Moscow Central Music School,0,1,2,2,4,8,"Levon Ambartsumian studied in the Moscow Central Music School and then in the Moscow Tchaikovsky Conservatory , where his teachers were Mikhail Garlitsky , Felix Andrievski , Yuri Yankelevich , Leonid Kogan and Igor Bezrodny .",
+143842620,Yokoyama,studied,CHIJ Katong Convent Primary School,0,0,1,1,3,7,Yokoyama studied in CHIJ Katong Convent Primary School and then at Raffles Girls ’,
+146377086,Gattani,studying,Bharda High School,0,0,2,2,4,6,Gattani was studying in Bharda High School when he was first spotted as a 15 - year old by Vinoo Mankad .,
+146752813,Purushottam Darwhekar,studied,Nilcity High School,0,1,2,2,4,6,"Purushottam Darwhekar studied in Nilcity High School , Nagpur .",
+149596828,Sauler,studied,De La,0,0,1,1,3,4,Sauler studied in De La Salle Santiago Zobel School from the Preparatory level to High School .,
+149596828,Sauler,studied,Salle Santiago Zobel School,0,0,1,1,5,8,Sauler studied in De La Salle Santiago Zobel School from the Preparatory level to High School .,
+151083997,Rajiv,studied,English High School,0,0,1,1,5,7,Rajiv studied in Fatima Devi English High School in Mumbai .,
+154979107,Mykhailo Berkos,studied,Odessa Drawing School,0,1,3,3,6,8,"Mykhailo Berkos first studied painting in Odessa Drawing School , graduating in 1877 .",
+155891010,Anu Palevaara,studied,the Laine Theatre Arts,0,1,2,2,9,12,"Anu Palevaara studied dance , drama and singing in the Laine Theatre Arts - music theater school in England 1990–1994 .",
+158186870,Alexander Bogoridi,studied,the Greek School,0,1,2,2,4,6,"Alexander Bogoridi studied in the Greek School in Phanar , in Constantinople and in France .",
+158655465,Piotr Litvinsky,studied,Tavricheskaya Art School,6,7,8,8,10,12,In the years 1943 - 1948 Piotr Litvinsky studied in Tavricheskaya Art School .,
+162193375,Yau,studied,St. Thomas Primary School,5,5,6,6,8,11,"Raised in Hong Kong , Yau studied in St. Thomas Primary School , Bishop Hall Jubilee School and Lee Kau Yan Memorial School —",
+163784668,Mironov,studied,the Vakhtangov Theatre School,0,0,1,1,3,6,Mironov studied in the Vakhtangov Theatre School during the early 1950s .,
+165902049,Tõnu Laigu,studied,the 46th Secondary School of Tallinn,4,5,6,6,8,13,From 1963 to 1974 Tõnu Laigu studied in the 46th Secondary School of Tallinn ( today ’s Pelgulinna Gymnasium of Tallinn ) .,
+167249058,Jüri Okas,studied,the 46th Secondary School of Tallinn,4,5,6,6,8,13,From 1957 to 1968 Jüri Okas studied in the 46th Secondary School of Tallinn ( today ’s Pelgulinna Gymnasium of Tallinn ) .,
+171278224,Merdinger,studied,High- School,0,0,1,1,6,7,Merdinger studied microelectronics and computers in High- School .,
+173891671,Lee,studied,the Provincial Tainan First Senior High School,0,0,1,1,3,9,Lee studied in the Provincial Tainan First Senior High School ( now National Tainan First Senior High School ) where his father was the principal .,
+176497643,Mahajan,studied,Delhi Public School,0,0,1,1,3,5,"Mahajan studied in Delhi Public School , Noida .",
+176925904,Kim,studied,the Korean Huadian School,0,0,2,2,4,7,"Kim also studied in the Korean Huadian School ( also known as Hwasong Middle School ) , which was also in Manchuria .",
+177302047,Oliva,studied,the Provincial School of Plastic Arts,0,0,1,1,8,13,Oliva studied art from 1961 to 1964 in the Provincial School of Plastic Arts in Pinar del Río .,
+181703933,Marie - Pierre Lambert,studied,the Grenoble Hotel School,0,3,19,19,21,24,"Marie - Pierre Lambert , born on 6 April 1957 in Sainte - Colombe ( Rhône ) , also studied in the Grenoble Hotel School from 1973 to 1976 .",
+182626628,Manoranjan,studied,"Hindu School & Presidency College , Calcutta",0,0,1,1,3,9,"Manoranjan studied in Hindu School & Presidency College , Calcutta .",
+182687521,Rhee,studied,Jinju Girls ' High School,13,13,14,14,16,20,"Born in Jinju , Gyeongsangnam - do in Korea under Japanese rule , Rhee studied in Jinju Girls ' High School before moving to Japan to attend Jissen Women 's University in Tokyo in 1938 .",
+183098509,Shane,studying,the Stella Adler School of Acting,4,4,8,8,10,15,"As of 2017 , Shane is also currently studying in the Stella Adler School of Acting in New York City .",
+183463069,Hossein,studied,Faridpur Zilla School,0,0,1,1,3,5,Hossein studied in Faridpur Zilla School and Jagannath College .,
+184179225,Alver,studied,Secondary School of Tartu,9,9,10,10,14,17,"Born in Tartu , from 1961 to 1972 , Alver studied in the 2nd Secondary School of Tartu ( today 's Miina Härma Gymnasium ) .",
+185258167,Mr Monnoo,studied,Welham Boys School,0,1,3,3,5,7,"Mr Monnoo initially studied in Welham Boys School , Dehradun in British India and had to leave it with the independence of Pakistan in 1947 and then he shifted to Aitchison College in Lahore and later , the College of Textiles at North Carolina State College , North Carolina , United States .",
+190629840,Gurmit Singh,studied,Outram Secondary School,0,1,2,2,4,6,Gurmit Singh studied in Outram Secondary School during his secondary school years .,
+191047498,Quek Leng Chan,studied,Victoria School,0,2,3,3,5,6,"Quek Leng Chan studied in Victoria School in Singapore and is qualified as a barrister - at - law from Middle Temple , United Kingdom .",
+191081514,Toh,studied,Anglo - Chinese School ( Junior,9,9,10,10,12,17,"The eldest of two children in his family , Toh studied in Anglo - Chinese School ( Junior ) and Anglo - Chinese School ( Independent ) , graduating from the International Baccalaureate ( IB ) programme in 2017 .",
+191243626,Asad,studied,Dhaka Collegiate School,0,0,1,1,3,5,Asad studied in Dhaka Collegiate School .,
